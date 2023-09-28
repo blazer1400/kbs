@@ -1,0 +1,138 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+header {
+    background-color: #7DF9FF;
+    padding: 16px;
+    height: 10vh;
+}
+
+.Upper-Section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 5vh;
+}
+
+.Lower-Section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 5vh;
+}
+.headerContainer {
+    width: 100%;
+}
+.homepage-Logo {
+    height: auto;
+    position: absolute;
+    margin-right: 100px;
+
+}
+.loginButtons {
+    display: flex;
+    align-items:center;
+    margin-left: auto;
+    width: max-content;
+    gap: 16px;
+}
+.loginButtons a {
+    color: black;
+    text-decoration: none;
+}
+.loginButtons a:hover {
+    text-decoration: underline;
+}
+nav {
+    margin-top: 0;
+    background-color: #6edce1;
+    width: 100%;
+    padding: 4px 0px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+nav a {
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+    padding: 8px;
+    transition-duration: 0.2s;
+}
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.searchbar {
+    background-color: white;
+    border: 1px solid grey;
+    height: max-content;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 auto 0 auto;
+}
+.searchbar i {
+    padding: 8px;
+}
+.searchbar input {
+    background-color: transparent;
+    border:none;
+    padding: 8px;
+    width: 100%;
+}
+
+
+.homepage-Logo {
+    height: 7vh;
+}
+
+.banner {
+    height: 30vh;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+/* Container for flexboxes */
+.row {
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+    padding: 10px;
+    height: 76vh; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+}
+
+/* Middle column */
+.column.middle {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 4;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    height: 5vh;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
