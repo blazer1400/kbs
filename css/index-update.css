@@ -87,13 +87,6 @@ nav a:hover {
     height: 7vh;
 }
 
-.banner {
-    height: 30vh;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
-
 .products {
     height: 350px;
     width:100%;
@@ -109,6 +102,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: end;
     border: 1px solid rgba(200, 200, 200, 0.5);
+    background-color:white;
     border-radius: 5px;
     width: 300px;
     height: 100%;
@@ -142,17 +136,17 @@ nav a:hover {
 /* Style the footer */
 .footer {
     background-color: #f1f1f1;
-    padding: 2rem 3rem;
+    padding: 2rem 10rem;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap:4rem;
 }
 .footer .navigation {
     display:flex;
     align-items: start;
     justify-content: space-around;
-    width: 100%;
+    gap: 2rem;
 }
 .footer .navigation a {
     text-decoration: none;
@@ -166,7 +160,7 @@ nav a:hover {
     padding: 4px;
 }
 .footer .partners {
-    width: 100%;
+
 }
 .footer .partners .content {
     display: flex;
