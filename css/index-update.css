@@ -87,46 +87,91 @@ nav a:hover {
     height: 7vh;
 }
 
-.banner {
-    height: 30vh;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
-
-/* Container for flexboxes */
-.row {
-    display: -webkit-flex;
+.products {
+    height: 350px;
+    width:100%;
+    padding: 2rem 0;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
-/* Create three unequal columns that sits next to each other */
-.column {
-    padding: 10px;
-    height: 76vh; /* Should be removed. Only for demonstration */
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    background-color:white;
+    border-radius: 5px;
+    width: 300px;
+    height: 100%;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
-
-/* Left and right column */
-.column.side {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-
+.productContainer .productImg {
+    border-bottom: 1px solid #6edce1;
+    padding-bottom: 1rem;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* Middle column */
-.column.middle {
-    -webkit-flex: 2;
-    -ms-flex: 2;
-    flex: 4;
+.productContainer img {
+    max-width: 300px;
+    max-height: 300px;
+}
+.productContainer .title {
+    font-size: 15px;
+}
+.productContainer .price {
+    color: #6edce1;
+}
+.productContainer:hover .title {
+    text-decoration: underline;
 }
 
 /* Style the footer */
 .footer {
     background-color: #f1f1f1;
-    height: 5vh;
-    padding: 10px;
-    text-align: center;
+    padding: 2rem 10rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:4rem;
+}
+.footer .navigation {
+    display:flex;
+    align-items: start;
+    justify-content: space-around;
+    gap: 2rem;
+}
+.footer .navigation a {
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)
+}
+.footer .navigation a:hover {
+    border: 1px solid lightgray;
+    padding: 4px;
+}
+.footer .partners {
+
+}
+.footer .partners .content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.footer .partners .content img {
+    width: 40px;
+}
+.footer .partners .title span {
+    color: lightgray;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
