@@ -5,6 +5,31 @@
     <title>KBS</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="./css/index-update.css"/>
+    <link rel="stylesheet" href="./banner/banner.css" type="text/css">
+    <style>
+        .swiper {
+            horiz-align: right;
+            width: 100%;
+            height: 400px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -38,8 +63,86 @@
 </nav>
 
 <div class="banner">
-    <?php require('./banner/banner.html') ?>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/compok.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/vrok.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/toyok.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/ARCOK.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/nerdok.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/Naamloos.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="">
+                    <img src="./banner/speak.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/monitor.jpg">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="./search.html">
+                    <img src="./banner/game.jpg">
+                </a>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </div>
+
+<div class="hr"></div>
 
 <div class="products">
     <div class="productContainer">

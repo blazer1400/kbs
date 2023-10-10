@@ -162,6 +162,9 @@ nav a:hover {
 .footer .partners {
 
 }
+.banner {
+    position: relative;
+}
 .footer .partners .content {
     display: flex;
     align-items: center;
@@ -172,6 +175,13 @@ nav a:hover {
 }
 .footer .partners .title span {
     color: lightgray;
+}
+.hr {
+    height: 2px;
+    background-color: rgba(211, 211, 211, 0.5);
+    width: 96%;
+    margin: 2rem auto 2rem auto;
+    border-radius: 5px;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
