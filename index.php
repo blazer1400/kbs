@@ -34,6 +34,7 @@
 <body>
 <header>
     <div class="Upper-Section">
+        <img class="homepage-Logo" src="img/Logo-NerdyGadgets.png" alt="Logo">
         <div class="headerContainer">
             <div class="loginButtons">
                 <a href="./uitchecken">Uitchecken</a>
@@ -42,7 +43,6 @@
         </div>
     </div>
     <div class="Lower-Section">
-        <img class="homepage-Logo" src="img/Logo-NerdyGadgets.png" alt="Logo">
         <div class="searchbarContainer">
             <form method="GET" action="./search.html">
                 <span class="searchbar">
@@ -143,6 +143,8 @@
 </div>
 
 <div class="hr"></div>
+
+<div class="vr"></div>
 
 <div class="products">
     <div class="productContainer">
