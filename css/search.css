@@ -37,7 +37,7 @@ header {
 .homepage-Logo {
     height: auto;
     position: absolute;
-    margin-right: 100px;
+    left: 2rem;
 
 }
 .loginButtons {
