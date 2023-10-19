@@ -1,0 +1,62 @@
+
+.submit {
+    padding: 5px 25px;
+    margin: 24px;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    text-decoration-color: black;;
+    margin-left: 75%;
+}
+.submit:active {
+    opacity: 50%;
+}
+#colorButton{
+    color: black;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border-color 0.1s;
+    border-radius: 2px;
+}
+#colorButton2 {
+    color: black;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border-color 0.1s;
+    border-radius: 2px;
+}
+#colorButton3 {
+    color: black;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border-color 0.1s;
+    border-radius: 2px;
+}
+.clicked {
+    border-color: #FF0000;
+}
+.typefeed {
+    background-color: white;
+    border-radius: 0;
+    margin: 12px;
+}
+
+#colorButton.clicked {
+    border: 4px solid #F7559A;
+}
+#colorButton2.clicked {
+    border: 4px solid #F7559A;
+}
+#colorButton3.clicked {
+    border: 4px solid #F7559A;
+}
