@@ -144,39 +144,41 @@
 
 <div class="hr"></div>
 
-<div class="vr"></div>
-
 <div class="products">
-    <div class="productContainer">
-        <div class="productImg">
-            <img src="./img/products/ipad.webp" />
-        </div>
-        <p class="title">APPLE iPad Mini (2021) Wifi - 64 GB - Spacegrijs</p>
-        <p class="price">€ 645,-</p>
-    </div>
+    <?php
+    require('./php/db_connection.php');
+    session_start();
 
-    <div class="productContainer">
-        <div class="productImg">
-            <img src="./img/products/jbl.jpg" />
-        </div>
-        <p class="title">JBL Charge 4 Zwart</p>
-        <p class="price">€ 109,–</p>
-    </div>
+    $query = $conn->query('SELECT * FROM product ORDER BY id DESC LIMIT 4');
+    if ($query) {
+        while ($row = $query->fetch_assoc()) {
+            echo '<div class="productContainer">
+                        <div class="productImg">
+                            <img src="./img/products/' . $row['image'] . '.jpg" />
+                        </div>
+                        <p class="title">' . $row['name'] . '</p>
+                        <p class="price">&euro; ' . $row['price'] . '</p>
+                        <form method="POST" action="./php/addToShoppingCart.php">
+                            <input hidden value="' . $row['id'] . '" name="id" />
+                            <button type="submit" class="shoppingCartButton">
+                                <span>Aan winkelwagen toevoegen</span>
+                                <i class="uil uil-shopping-basket"></i>
+                            </input>
+                        </form>
+                    </div>';
+        }
+    } else {
+        die($conn->error);
+    }
 
-    <div class="productContainer">
-        <div class="productImg">
-            <img src="./img/products/lg.jpg" />
-        </div>
-        <p class="title">LG 65QNED916QA</p>
-        <p class="price">€ 1099, –</p>
-    </div>
+    ?>
 </div>
 
 <div class="footer">
     <div class="navigation">
         <a href="./terms-and-conditions">Algemene voorwaarden</a>
         <a href="./account">Accountgegevens</a>
-        <a href="cookies">Cookie-instellingen</a>
+        <a href="./cookies">Cookie-instellingen</a>
         <a href="./privacy">Privacyverklaring</a>
     </div>
     <div class="partners">

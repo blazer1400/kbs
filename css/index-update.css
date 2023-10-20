@@ -72,6 +72,12 @@ nav a:hover {
     border-radius: 5px;
     margin: 0 auto 0 auto;
 }
+.searchbar input:focus {
+    outline: none;
+}
+.searchbar:focus-within {
+    outline: 1px solid black;
+}
 .searchbar i {
     padding: 8px;
 }
@@ -87,20 +93,14 @@ nav a:hover {
     height: 7vh;
 }
 
-.vr {
-    width:90vw;
-    background-color: rgba(211, 211, 211, 0.5);
-    height: 1px;
-    margin: 1rem auto 1rem auto;
-}
-
 .products {
-    height: 350px;
+    height: fit-content;
     width:100%;
     padding: 2rem 0;
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 1rem;
     justify-content: space-around;
 }
 
@@ -120,7 +120,7 @@ nav a:hover {
 .productContainer .productImg {
     border-bottom: 1px solid #6edce1;
     padding-bottom: 1rem;
-    height: 300px;
+    height: 200px;
     width: 300px;
     display: flex;
     align-items: center;
@@ -128,13 +128,24 @@ nav a:hover {
 }
 .productContainer img {
     max-width: 300px;
-    max-height: 300px;
+    max-height: 200px;
 }
 .productContainer .title {
     font-size: 15px;
 }
 .productContainer .price {
     color: #6edce1;
+    font-weight: 700;
+}
+.productContainer .shoppingCartButton {
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #6edce1;
+}
+.productContainer .shoppingCartButton:hover {
+    background-color: #7DF9FF;
 }
 .productContainer:hover .title {
     text-decoration: underline;
@@ -167,7 +178,6 @@ nav a:hover {
     padding: 4px;
 }
 .footer .partners {
-
 }
 .banner {
     position: relative;
