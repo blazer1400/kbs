@@ -62,6 +62,8 @@
     <a href="./klantenservice">Klantenservice</a>
 </nav>
 
+<?php session_start(); ?>
+
 <div class="banner">
 
     <!-- Swiper -->
@@ -147,7 +149,6 @@
 <div class="products">
     <?php
     require('./php/db_connection.php');
-    session_start();
 
     $query = $conn->query('SELECT * FROM product ORDER BY id DESC LIMIT 4');
     if ($query) {
