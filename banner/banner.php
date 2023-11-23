@@ -51,12 +51,12 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <a href="search.html">
-                <img src="./Images/Telefoon.jpg">
+                <img src="Images/phones.jpg">
             </a>
         </div>
         <div class="swiper-slide">
             <a href="search.html">
-                <img src="./Images/Laptops.jpg">
+                <img src="Images/laptops.jpg">
             </a>
         </div>
         <div class="swiper-slide">
@@ -66,12 +66,12 @@
         </div>
         <div class="swiper-slide">
             <a href="search.html">
-                <img src="./Images/Accessoires.jpg">
+                <img src="Images/componenten.jpg">
             </a>
         </div>
         <div class="swiper-slide">
             <a href="search.html">
-                <img src="./Images/Router.jpg">
+                <img src="Images/routers.jpg">
             </a>
         </div>
         <div class="swiper-slide">

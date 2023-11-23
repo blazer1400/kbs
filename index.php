@@ -38,7 +38,7 @@
 </nav>
 
 <div class="banner">
-    <?php require('./banner/banner.html') ?>
+    <?php require('./banner/banner.php') ?>
 </div>
 
 <div class="vr"></div>
