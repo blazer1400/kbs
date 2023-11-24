@@ -212,6 +212,7 @@ nav a:hover {
 }
 
 .content-box {
+    margin-top: 2vh;
     width: 65vw;
     height: 40vh;
     background-color: lightcyan;
@@ -219,6 +220,37 @@ nav a:hover {
     padding: 25px;
     opacity: 0.8;
     box-shadow: 3px 3px 1px 1px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.content-box:hover{
+    opacity: 0.6;
+}
+
+.content-img {
+    height: 220px;
+    width: 370px;
+    overflow: hidden;
+    outline: #04AA6D dotted;
+    margin-left: 0px;
+}
+
+.content-img img {
+    height: 30vh;
+    max-width: 100%;
+}
+
+.product-raster a {
+    text-decoration: none;
+}
+.content-name{
+    color: var(--black);
+
+}
+.content-price{
+    color: var(--black);
+    float:right;
+}
+.content-category{
+
 }
 .column.side-right {
 
@@ -239,9 +271,3 @@ nav a:hover {
     padding: 10px;
 }
 
-.footer {
-    background-color: var(--white);
-    height: 5vh;
-    padding: 10px;
-    text-align: center;
-}
