@@ -92,20 +92,30 @@ LIMIT 1;";
     for($i = 0; $i < count($rows2); $i++){
         foreach($rows2[$i] as $rij2 => $waarde3){
             if($rij2 == 'image'){
-                print(
+                $image = $waarde3;
+            }
+            if ($rij2 == 'name'){
+                $product = $waarde3;
+            }
+            if($rij2 == 'description'){
+                $beschrijving = $waarde3;
+            }
+            if($rij2 == 'price'){
+                $prijs = $waarde3;
+            }
+            print(
                 "<div class=\"swiper-slide\">
             <a href=\"search.html\" class=\"product-link\">
                 <div id=\"slidefoto\">
-                    <img src=\"banner/images/$waarde3.jpg\" alt=\"Laptop Image\">
-                </div>");
-                print ("<div class=\"product-info\" id=\"item-info\">
-                    <h1 class=\"product\">Laptop</h1>
-                    <p class=\"omschrijving\">Dit is een laptop</p>
-                    <h1 class=\"product-prijs\">Prijs</h1>
+                    <img src=\"banner/images/$image.jpg\" alt=\"Laptop Image\">
+                </div><div class=\"product-info\" id=\"item-info\">
+                    <h1 class=\"product\">$product</h1>
+                    <p class=\"omschrijving\">$beschrijving</p>
+                    <h1 class=\"product-prijs\">$prijs</h1>
                 </div>
             </a>
         </div>");
-            }
+
         }
     }
 
