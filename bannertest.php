@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Nerdy Gadgets</title>
     <link rel="stylesheet" href="banner/banner.css" type="text/css">
+    <link rel="stylesheet" href="banner/swiper.css" type="text/css">
     <script type="text/javascript" src="cover.js"></script>
     <script type="text/javascript">
     </script>
@@ -11,6 +12,7 @@
         html,
         body {
             position: relative;
+            height: 100%;
         }
 
         body {
@@ -23,26 +25,51 @@
         }
 
         .swiper {
-            horiz-align: right;
             width: 100%;
             height: 400px;
         }
 
         .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
         }
 
         .swiper-slide img {
-            display: block;
             max-width: 100%;
             max-height: 100%;
             width: auto;
             height: auto;
+            object-fit: contain;
+        }
+
+        .product-info {
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .product-link {
+            text-decoration: none;
+            color: black;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-prijs {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 40px;
+            margin-right: 96px;
         }
     </style>
 </head>
@@ -52,48 +79,22 @@
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <a href="search.html">
-                <img src="banner/compok.jpg">
+            <a href="search.html" class="product-link">
+                <div id="slidefoto">
+                    <img src="banner/images/7Mg2Ym8jWg2j.jpg" alt="Laptop Image">
+                </div>
+                <div class="product-info" id="item-info">
+                    <h1 class="product">Laptop</h1>
+                    <p class="omschrijving">Dit is een laptop</p>
+                    <h1 class="product-prijs">Prijs</h1>
+                </div>
             </a>
         </div>
         <div class="swiper-slide">
-        <a href="search.html">
-            <img src="banner/vrok.jpg">
-        </a>
-        </div>
-        <div class="swiper-slide">
-        <a href="search.html">
-            <img src="banner/toyok.jpg">
-        </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="search.html">
-                <img src="banner/ARCOK.jpg">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="search.html">
-                <img src="banner/nerdok.jpg">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="search.html">
-                <img src="banner/Naamloos.jpg">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="">
-                <img src="banner/speak.jpg">
-            </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="search.html">
-                <img src="banner/monitor.jpg">
-            </a>
-           </div>
-        <div class="swiper-slide">
-            <a href="search.html">
-                <img src="banner/game.jpg">
+            <a href="search.html" class="product-link">
+                <div id="category-img">
+                    <img src="banner/images/componenten.jpg" alt="Componenten Image">
+                </div>
             </a>
         </div>
     </div>
@@ -126,5 +127,4 @@
 </script>
 </body>
 
-</body>
 </html>

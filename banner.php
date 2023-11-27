@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="banner/banner.css" type="text/css">
+    <link rel="stylesheet" href="banner/swiper.css" type="text/css">
     <script type="text/javascript" src="cover.js"></script>
     <script type="text/javascript">
     </script>
@@ -93,10 +94,17 @@ LIMIT 1;";
             if($rij2 == 'image'){
                 print(
                 "<div class=\"swiper-slide\">
-    <a href=\"search.html\">
-    <img src=\"banner/images/$waarde3.jpg\">
-    </a>
-</div>");
+            <a href=\"search.html\" class=\"product-link\">
+                <div id=\"slidefoto\">
+                    <img src=\"banner/images/$waarde3.jpg\" alt=\"Laptop Image\">
+                </div>");
+                print ("<div class=\"product-info\" id=\"item-info\">
+                    <h1 class=\"product\">Laptop</h1>
+                    <p class=\"omschrijving\">Dit is een laptop</p>
+                    <h1 class=\"product-prijs\">Prijs</h1>
+                </div>
+            </a>
+        </div>");
             }
         }
     }
