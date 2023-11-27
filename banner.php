@@ -111,7 +111,7 @@ LIMIT 1;";
                 </div><div class=\"product-info\" id=\"item-info\">
                     <h1 class=\"product\">$product</h1>
                     <p class=\"omschrijving\">$beschrijving</p>
-                    <h1 class=\"product-prijs\">$prijs</h1>
+                    <h1 class=\"product-prijs\">€$prijs</h1>
                 </div>
             </a>
         </div>");

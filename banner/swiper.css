@@ -28,6 +28,8 @@
 }
 .omschrijving{
     text-decoration: none;
+    display: block;
+    margin-top: 10px;
 }
 #item-info{
     height: 100%;
