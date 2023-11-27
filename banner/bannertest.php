@@ -80,6 +80,13 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <a href="../search.html" class="product-link">
+                <div id="category-img">
+                    <img src="images/laptops.jpg" alt="Componenten Image">
+                </div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="../search.html" class="product-link">
                 <div id="slidefoto">
                     <img src="images/7Mg2Ym8jWg2j.jpg" alt="Laptop Image">
                 </div>
@@ -90,13 +97,6 @@
                 </div>
             </a>
         </div>
-<!--        <div class="swiper-slide">-->
-<!--            <a href="../search.html" class="product-link">-->
-<!--                <div id="category-img">-->
-<!--                    <img src="images/componenten.jpg" alt="Componenten Image">-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>

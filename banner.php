@@ -37,7 +37,7 @@
             justify-content: center;
             align-items: center;
             object-fit: cover;
-            overflow: hidden; /* Ensure overflow is hidden to clip any part of the image that exceeds the slide */
+            overflow: hidden;
         }
 
         .swiper-slide img {
