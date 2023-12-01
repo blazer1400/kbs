@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="css/search.css" />
 </head>
 <body>
-/*    HEADER     */
+
     <?php include 'header.php';
     ?>
-/*    HEADER     */
+
 
 
 <div class="row">
