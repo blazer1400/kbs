@@ -93,6 +93,8 @@ $conn->close();
 
 
 <div class="footer">
+    <?php include 'footer.php';
+    ?>
     <p>Footer</p>
 </div>
 </body>
