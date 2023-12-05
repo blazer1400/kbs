@@ -19,7 +19,7 @@
     </div>
     <div class="Lower-Section">
         <div class="searchbarContainer">
-            <form method="GET" action="./search.html">
+            <form method="GET" action="search.php">
                 <span class="searchbar">
                     <i class="uil uil-search"></i>
                     <input name="q" type="text" />
@@ -33,7 +33,7 @@
 <nav>
     <a href="./winkel">Winkel</a>
     <a href="./gadgets">Gadgets</a>
-    <a href="./search.html">Sale</a>
+    <a href="search.php">Sale</a>
     <a href="./klantenservice">Klantenservice</a>
 </nav>
 
