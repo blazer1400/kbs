@@ -54,24 +54,46 @@
                     <form action="" method="get">
                     <div class="category">
                         <a href="#">Category</a>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Laptops"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Laptops">Laptops<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Phones"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Phones">Phones<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Opslag"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Opslag">Opslag<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Routers"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Routers">Routers<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Componenten"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Componenten">Componenten<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Desktops"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Desktops">Desktops<br>
-                        </label>
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "nerdy_gadgets";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname); // Connect direct met de database ipv alleen met SQL
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        // QUERY
+                        $sql = "SELECT DISTINCT category FROM product";
+                        // RESULT
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // PRODUCT RASTER
+                            echo '<div class="product-raster">';
+                            $connection = mysqli_connect('127.0.0.1', 'root', '', 'nerdy_gadgets', '3306');
+                            $sql_selectALL = "SELECT * FROM product";
+                            $res = mysqli_query($connection, $sql);
+
+                            while ($row = mysqli_fetch_assoc($res)) {
+                                $productCategory = $row["category"];
+
+                                echo "<label>";
+                                echo "<input type='checkbox' " . (isset($_GET[$productCategory]) ? "checked='checked'" : "") . " onchange='this.form.submit()' name='$productCategory'>$productCategory <br>";
+                                echo "</label>";
+
+                            }
+                            mysqli_close($connection);
+                            echo "</div>";
+                        } else {
+                            echo "0 results";
+                        }
+                        $conn->close();
+                        ?>
                     </div>
                     </form>
                 </li>
@@ -142,23 +164,23 @@
             $sqlCategorys = [];
 
             $categoryChecked = 0;
-            if(isset($_GET["Laptops"])){
-                $sqlCategorys[] = "Laptops";
+            if(isset($_GET["laptops"])){
+                $sqlCategorys[] = "laptops";
             }
-            if(isset($_GET["Phones"])){
-                $sqlCategorys[] = "Phones";
+            if(isset($_GET["phones"])){
+                $sqlCategorys[] = "phones";
             }
-            if(isset($_GET["Opslag"])){
-                $sqlCategorys[] = "Opslag";
+            if(isset($_GET["opslag"])){
+                $sqlCategorys[] = "opslag";
             }
-            if(isset($_GET["Routers"])){
-                $sqlCategorys[] = "Routers";
+            if(isset($_GET["routers"])){
+                $sqlCategorys[] = "routers";
             }
-            if(isset($_GET["Componenten"])){
-                $sqlCategorys[] = "Componenten";
+            if(isset($_GET["componenten"])){
+                $sqlCategorys[] = "componenten";
             }
-            if(isset($_GET["Desktops"])){
-                $sqlCategorys[] = "Desktops";
+            if(isset($_GET["desktops"])){
+                $sqlCategorys[] = "desktops";
             }
 
             if(count($sqlCategorys) == 1){
