@@ -49,11 +49,17 @@
         .swiper-wrapper{
             object-fit: contain;
         }
+        .product-prijs {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 40px;
+            margin-right: 96px;
+        }
     </style>
     <?php
     include 'dbConnction.php';
     $userid = rand(1,1000);
-    $limit = 1;
     $sql = "SELECT *, COUNT(*) AS order_count 
 FROM nerdy_gadgets_start.order O 
 JOIN user U ON U.id = O.user_id 
@@ -76,7 +82,7 @@ LIMIT 1;";
     <?php
     for($i = 0; $i < count($rows); $i++){
         foreach($rows[$i] as $rij => $waarde){
-            if($rij == 'category'){
+            if($rij == 'category') {
                 $category = $waarde;
                 print(
                 "<div class=\"swiper-slide\" style='object-fit: contain'>
@@ -85,38 +91,27 @@ LIMIT 1;";
             }
         }
     }
-//    $category = 'routers';
-    $sql2 = "SELECT * FROM Product WHERE category = '$category' LIMIT 6";
+    $limit = 6;
+    $sql2 = "SELECT * FROM Product WHERE category = '$category' LIMIT $limit";
     $result2 = mysqli_query($conn, $sql2);
     $rows2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     for($i = 0; $i < count($rows2); $i++){
-        foreach($rows2[$i] as $rij2 => $waarde3){
-            if($rij2 == 'image'){
-                $image = $waarde3;
-            }
-            if ($rij2 == 'name'){
-                $product = $waarde3;
-            }
-            if($rij2 == 'description'){
-                $beschrijving = $waarde3;
-            }
-            if($rij2 == 'price'){
-                $prijs = $waarde3;
-            }
+            $productName = $rows2[$i]['name'];
+            $productImage = $rows2[$i]['image'];
+            $productDescription = $rows2[$i]['description'];
+            $productPrice = $rows2[$i]['price'];
             print(
                 "<div class=\"swiper-slide\">
             <a href=\"search.html\" class=\"product-link\">
                 <div id=\"slidefoto\">
-                    <img src=\"banner/images/$image.jpg\" alt=\"Laptop Image\">
-                </div><div class=\"product-info\" id=\"item-info\">
-                    <h1 class=\"product\">$product</h1>
-                    <p class=\"omschrijving\">$beschrijving</p>
-                    <h1 class=\"product-prijs\">€$prijs</h1>
+                    <img src=\"banner/images/$productImage.jpg\" alt=\"Laptop Image\">
+                </div>
+                <div class=\"product-info\" id=\"item-info\">
+                    <h1 class=\"product\">$productName</h1>
+                    <h1 class=\"product-prijs\">€$productPrice</h1>
                 </div>
             </a>
         </div>");
-
-        }
     }
 
     ?>

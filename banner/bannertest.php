@@ -86,7 +86,7 @@
                 <div class="product-info" id="item-info">
                     <h1 class="product">Laptop</h1>
                     <p class="omschrijving">Dit is een laptop iueh nuehv iheivuhf iuhevk cjh iuekvbkeb iuehivbei huehvibe To make the omschrijving appear as a block instead of a single line of text, you can set its display property to block. Additionally, you can use other styles such as margin to adjust spacing. Here's how you can modify the CSS for omschrijving:</p>
-                    <h1 class="product-prijs">€500</h1>
+                    <h1 class="product-prijs" id="priceprod">€500</h1>
                 </div>
             </a>
         </div>

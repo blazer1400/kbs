@@ -48,14 +48,32 @@
             <hr width="80%">
             <p>Wat voor feedback</p>
             <div class="typebuttons" id="typeButton">
-                <button class="typefeed" id="colorButton">Suggestie</button>
-                <button class="typefeed" id="colorButton2">Iets ging fout</button>
-                <button class="typefeed" id="colorButton3">Compliment</button>
+                <div class="feedType">
+                    <input type="radio"
+                           id="feedFout"
+                           name="feedType"
+                           value="feedFout">
+                    <label for="feedFout">Foutmelding</label>
+                </div>
+                <div class="feedType">
+                    <input type="radio"
+                           id="feedSuggest"
+                           name="feedType"
+                           value="feedSuggest" required>
+                    <label for="feedSuggest">Suggestie</label>
+                </div>
+                <div class="feedType">
+                    <input type="radio"
+                           id="feedComp"
+                           name="feedType"
+                           value="feedComp">
+                    <label for="feedComp">Compliment</label>
+                </div>
             </div>
             <hr width="80%">
             <p>Wat valt er te verbeteren?</p>
-            <input type="text" class="input" name="beoordeling">
-            <input type="submit" class="submit" onclick="removeFeedBack()" value="SUBMIT">
+            <input type="text" class="input" name="beoordeling" required>
+            <input type="submit" class="submit"  value="SUBMIT">
         </div>
     </form>
     <div class="thx none" id="thank">

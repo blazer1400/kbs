@@ -6,9 +6,6 @@
   <link rel="stylesheet" href="feedbackscreen.css">
   <link rel="stylesheet" href="feedbackknop.css">
   <script src="feedback.js" defer></script>
-    <?php
-    include 'test123.php'
-    ?>
 </head>
 <body>
 <div class="container">
