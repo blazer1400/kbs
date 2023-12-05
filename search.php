@@ -8,11 +8,11 @@
 </head>
 <body>
 
-    <?php include 'header.php';
+    <?php include 'header.php';    ?>
+    <?php
+    $resultCategory = [];
+
     ?>
-
-
-
 
 <div class="row">
     <div class="column side-left">
@@ -81,7 +81,7 @@
 
                             while ($row = mysqli_fetch_assoc($res)) {
                                 $productCategory = $row["category"];
-
+                                $resultCategory[] = $productCategory;
                                 echo "<label>";
                                 echo "<input type='checkbox' " . (isset($_GET[$productCategory]) ? "checked='checked'" : "") . " onchange='this.form.submit()' name='$productCategory'>$productCategory <br>";
                                 echo "</label>";
@@ -91,6 +91,7 @@
                             echo "</div>";
                         } else {
                             echo "0 results";
+
                         }
                         $conn->close();
                         ?>
@@ -163,23 +164,22 @@
             $sqlConditite = "";
             $sqlCategorys = [];
 
-            $categoryChecked = 0;
-            if(isset($_GET["laptops"])){
+            if(isset($_GET["$resultCategory[0]"])){
                 $sqlCategorys[] = "laptops";
             }
-            if(isset($_GET["phones"])){
+            if(isset($_GET[$resultCategory[1]])){
                 $sqlCategorys[] = "phones";
             }
-            if(isset($_GET["opslag"])){
+            if(isset($_GET[$resultCategory[2]])){
                 $sqlCategorys[] = "opslag";
             }
-            if(isset($_GET["routers"])){
+            if(isset($_GET[$resultCategory[3]])){
                 $sqlCategorys[] = "routers";
             }
-            if(isset($_GET["componenten"])){
+            if(isset($_GET[$resultCategory[4]])){
                 $sqlCategorys[] = "componenten";
             }
-            if(isset($_GET["desktops"])){
+            if(isset($_GET[$resultCategory[5]])){
                 $sqlCategorys[] = "desktops";
             }
 
@@ -189,7 +189,7 @@
                 $sql = "SELECT * FROM product $sqlConditite";
             }else if(count($sqlCategorys ) > 1){
                 foreach ($sqlCategorys as $yuh){
-                    echo "<script type='text/javascript'>alert('$yuh');</script>";
+                    echo "";
                 }
                 $sql = "SELECT * FROM product";
             }else{

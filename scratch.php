@@ -11,6 +11,9 @@
 <div class="category">
 <a href="#">Category</a>
 <?php
+$resultCategory = [];
+?>
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -37,7 +40,7 @@ if ($result->num_rows > 0) {
 
     while ($row = mysqli_fetch_assoc($res)) {
         $productCategory = $row["category"];
-
+        $resultCategory[] = $productCategory;
         echo "<label>";
         echo "<input type='checkbox' " . (isset($_GET[$productCategory]) ? "checked='checked'" : "") . " onchange='this.form.submit()' name='$productCategory'>$productCategory";
         echo "</label>";
