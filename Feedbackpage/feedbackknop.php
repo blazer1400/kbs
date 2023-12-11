@@ -73,7 +73,7 @@
             <hr width="80%">
             <p>Wat valt er te verbeteren?</p>
             <input type="text" class="input" name="beoordeling" required>
-            <input type="submit" class="submit"  value="SUBMIT">
+            <input type="submit" class="submit">
         </div>
     </form>
     <div class="thx none" id="thank">

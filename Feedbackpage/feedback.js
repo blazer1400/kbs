@@ -1,12 +1,12 @@
 let feedBox = document.getElementById("feedBox");
-document.getElementById("feedbackForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const selectedRating = document.querySelector(".star-container.clicked").getAttribute("data-rating");
-    const selectedFeedbackType = document.querySelector(".typefeed.clicked").textContent;
-    const feedbackText = document.querySelector("textarea[name='feedbackText']").value;
-    document.getElementById("feedbackForm").reset();
-    removeFeedBack()
-});
+let starRating = document.getElementById("starRating");
+let star1 = document.getElementById("star1");
+let star2 = document.getElementById("star2");
+let star3 = document.getElementById("star3");
+let star4 = document.getElementById("star4");
+let star5 = document.getElementById("star5");
+let feedBack = document.getElementById("feedBack");
+let thank = document.getElementById("thank");
 
 // Here, you can send the feedback data to your server or perform any desired actions.
 // Function to display the feedBox pop-up
@@ -42,26 +42,7 @@ function removeFeedBack() {
     colorButton2.classList.remove('clicked');
     colorButton3.classList.remove('clicked');
 
-        // Get the selected feedback type
-    let feedbackType;
-    if (isClicked1) {
-            feedbackType = "Suggestie";
-        } else if (isClicked2) {
-            feedbackType = "Iets ging fout";
-        } else if (isClicked3) {
-            feedbackType = "Compliment";
-        }
-        document.getElementById("feedbackType").value = feedbackType;
-        document.getElementById("feedbackForm").submit();
-}
-let starRating = document.getElementById("starRating");
-let star1 = document.getElementById("star1");
-let star2 = document.getElementById("star2");
-let star3 = document.getElementById("star3");
-let star4 = document.getElementById("star4");
-let star5 = document.getElementById("star5");
-let feedBack = document.getElementById("feedBack");
-let thank = document.getElementById("thank");
+
 
 function addChecked1() {
     star1.classList.add("checked");
@@ -200,7 +181,7 @@ colorButton3.addEventListener('click', () => {
     isClicked2 = false;
     colorButton.classList.remove('clicked');
     colorButton2.classList.remove('clicked');
-});
+});}
 
 
 
