@@ -55,15 +55,18 @@
                     <div class="category">
                         <a href="#">Category</a>
                         <?php
-                        $servername = "localhost";
+                        echo "";
+                        $servername = "127.0.0.1";
                         $username = "root";
-                        $password = "";
+                        $password = "Lovesaraamal2001";
                         $dbname = "nerdy_gadgets";
 
                         // Create connection
-                        $conn = new mysqli($servername, $username, $password, $dbname); // Connect direct met de database ipv alleen met SQL
+                        $conn = new mysqli($servername, $username, $password, $dbname,3306); // Connect direct met de database ipv alleen met SQL
                         // Check connection
+                        echo "";
                         if ($conn->connect_error) {
+                            echo "Connection failed: " . $conn->connect_error;
                             die("Connection failed: " . $conn->connect_error);
                         }
 
@@ -75,7 +78,7 @@
                         if ($result->num_rows > 0) {
                             // PRODUCT RASTER
                             echo '<div class="product-raster">';
-                            $connection = mysqli_connect('127.0.0.1', 'root', '', 'nerdy_gadgets', '3306');
+                            $connection = mysqli_connect('127.0.0.1', 'root', $password, 'nerdy_gadgets', '3306');
                             $sql_selectALL = "SELECT * FROM product";
                             $res = mysqli_query($connection, $sql);
 
@@ -146,13 +149,13 @@
     <div class="column middle">
         <div class="content-wrapper">
             <?php
-            $servername = "localhost";
+            $servername = "127.0.0.1";
             $username = "root";
-            $password = "";
+            $password = "Lovesaraamal2001";
             $dbname = "nerdy_gadgets";
 
             // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname); // Connect direct met de database ipv alleen met SQL
+            $conn = new mysqli($servername, $username, $password, $dbname, 3306); // Connect direct met de database ipv alleen met SQL
             // Check connection
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);

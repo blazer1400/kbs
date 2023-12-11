@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="winkelwagen.css">
     <title> Winkelwagen </title>
+
 </head>
+
 <body>
+<
+<?php include 'header.php';    ?>
+<?php
+?>
+
 
 <h1> Winkelwagen </h1>
 

@@ -6,9 +6,13 @@
     <meta name="viewport" content="een betaalsysteem, initial-scale=1.0">
     <link rel="stylesheet" href="betaalsysteem.css">
 
+
     <title>betaalsysteem</title>
 </head>
 <body>
+<?php include 'header.php';    ?>
+<?php
+?>
 <div class="container">
     <h6>Checkout</h6>
 
