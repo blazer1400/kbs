@@ -73,10 +73,11 @@
     color: black;
     border: 2px solid #000;
     background-color: #f0f0f0;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
     transition: border-color 0.1s;
     border-radius: 2px;
+    margin: 4px;
 }
 .typebuttons input[type="radio"]:checked + label{
     border: 4px solid #F7559A;

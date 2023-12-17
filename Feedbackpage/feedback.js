@@ -28,6 +28,7 @@ function removeFeedBox() {
     feedBox.classList.add("remove");
     thank.classList.remove("display")
     feedBox.classList.remove("changesize")
+    document.getElementById("feedbackForm").reset();
 }
 function removeFeedBack() {
     feedBack.classList.add("none");

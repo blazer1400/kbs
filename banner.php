@@ -84,10 +84,19 @@ LIMIT 1;";
         foreach($rows[$i] as $rij => $waarde){
             if($rij == 'category') {
                 $category = $waarde;
-                print(
-                "<div class=\"swiper-slide\" style='object-fit: contain'>
+                if ($category == 'desktops'){
+                    print(
+                    "<div class=\"swiper-slide\" style='object-fit: contain'>
+            <a href=\"search.html\"><img src=\"banner/images/monitor.jpg\"></a>
+        </div><div class=\"swiper-slide\" style='object-fit: contain'>
+            <a href=\"search.html\"><img src=\"banner/images/compok.jpg\"></a>
+        </div>");
+                } else{
+                    print(
+                    "<div class=\"swiper-slide\" style='object-fit: contain'>
             <a href=\"search.html\"><img src=\"banner/images/$category.jpg\"></a>
         </div>");
+                }
             }
         }
     }
