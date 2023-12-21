@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="./css/index-update.css"/>
     <link rel="stylesheet" href="./banner/banner.css" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .swiper {
             horiz-align: right;

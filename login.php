@@ -16,6 +16,12 @@ if (!empty($_SESSION['user_id'])) {
 
 ?>
 <div class="h-screen w-screen flex items-center justify-center relative bg-[#6edce1]/50">
+
+    <a href="index.php" class="bg-gray-50 hover:bg-gray-200 flex items-center justify-center gap-4 rounded p-2 absolute left-2 top-2 cursor-pointer">
+        <i class="uil uil-angle-left"></i>
+        Terug
+    </a>
+
     <img src="img/Logo-NerdyGadgets.png" class="absolute w-60 top-12"/>
 
     <div class="w-1/2">
@@ -23,7 +29,7 @@ if (!empty($_SESSION['user_id'])) {
             <button id="loginButton" class="text-gray-600 text-sm w-full rounded-t-lg bg-white py-1" onclick="showLogin()">Inloggen</button>
             <button id="regButton" class="text-gray-600 text-sm w-full rounded-t-lg py-1 bg-gray-50 hover:bg-white" onclick="showRegister()">Registreren</button>
         </div>
-            <form id="loginForm" class="shadow-xl z-30 mx-auto shadow h-1/2 w-full rounded-lg bg-white px-8 py-8 overflow flex flex-col gap-10">
+            <form id="loginForm" method="POST" action="./php/loginHandler.php" class="shadow-xl z-30 mx-auto shadow h-1/2 w-full rounded-lg bg-white px-8 py-8 overflow flex flex-col gap-10">
 
                 <span class="block border rounded w-full h-max relative ">
                     <label class="absolute -top-3 bg-white px-2 left-2 font-medium text-sm">E-mail</label>

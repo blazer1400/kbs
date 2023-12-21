@@ -12,7 +12,7 @@ header {
 .Upper-Section {
     margin-left: 5vw;
     margin-right: 5vw;
-    height: 5vh;
+    height: 3vh;
 }
 
 .Lower-Section {
@@ -119,9 +119,9 @@ nav a:hover {
 }
 .productContainer .productImg {
     border-bottom: 1px solid #6edce1;
-    padding-bottom: 1rem;
-    height: 200px;
-    width: 300px;
+    padding-bottom: 2rem;
+    max-height: 180px;
+    max-width: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
