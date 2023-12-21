@@ -38,7 +38,24 @@
         <div class="headerContainer">
             <div class="loginButtons">
                 <a href="./uitchecken">Uitchecken</a>
-                <a href="./login">Login/Registratie</a>
+                <?php
+
+                require('./php/db_connection.php');
+                session_start();
+
+                if (empty($_SESSION['user_id'])) {
+                    echo '<a href="./login.php">Login/Registratie</a>';
+                } else {
+                    $name = $conn->query("SELECT first_name, surname FROM user WHERE id = " . $_SESSION['user_id'])->fetch_row();
+                    echo '<a href="./php/logout.php">Uitloggen</a>
+                <div class="flex items-center gap-1">
+                    <i class="uil uil-user"></i>
+                    <p>'.(strtoupper(substr($name[0], 0, 1)) . substr($name[0], 1)).' '.(strtoupper(substr($name[1], 0, 1)) . substr($name[1], 1)).'</p>
+                </div>';
+                }
+
+
+                ?>
             </div>
         </div>
     </div>
@@ -61,8 +78,6 @@
     <a href="./search.html">Sale</a>
     <a href="./klantenservice">Klantenservice</a>
 </nav>
-
-<?php session_start(); ?>
 
 <div class="banner">
 
@@ -150,7 +165,7 @@
     <?php
     require('./php/db_connection.php');
 
-    $query = $conn->query('SELECT * FROM product ORDER BY id DESC LIMIT 4');
+    $query = $conn->query('SELECT * FROM product ORDER BY RAND() LIMIT 4');
     if ($query) {
         while ($row = $query->fetch_assoc()) {
             echo '<div class="productContainer">

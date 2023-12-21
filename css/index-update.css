@@ -94,7 +94,7 @@ nav a:hover {
 }
 
 .products {
-    height: fit-content;
+    height:440px;
     width:100%;
     padding: 2rem 0;
     display: flex;
@@ -159,6 +159,7 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     gap:4rem;
+    margin-top:1rem;
 }
 .footer .navigation {
     display:flex;
