@@ -1,0 +1,247 @@
+:root{
+    --lightblue: #7DF9FF;
+    --blue: #6edce1;
+    --black: #333;
+    --lightgrey: #bbb;
+    --darkgrey: #aaa;
+    --white: #f1f1f1;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, serif;
+}
+header {
+    background-color: var(--black);
+    padding: 16px;
+    height: 10vh;
+}
+
+.Upper-Section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 5vh;
+}
+
+.Lower-Section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 5vh;
+}
+.headerContainer {
+    width: 100%;
+}
+.homepage-Logo {
+    height: auto;
+    position: absolute;
+    margin-right: 100px;
+
+}
+.loginButtons {
+    display: flex;
+    align-items:center;
+    margin-left: auto;
+    width: max-content;
+    gap: 16px;
+}
+.loginButtons a {
+    color: black;
+    text-decoration: none;
+}
+.loginButtons a:hover {
+    text-decoration: underline;
+}
+nav {
+    margin-top: 0;
+    background-color: var(--blue);
+    width: 100%;
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+nav a {
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+    padding: 8px;
+    transition-duration: 0.2s;
+}
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.searchbar {
+    background-color: white;
+    border: 1px solid grey;
+    height: max-content;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 auto 0 auto;
+}
+.searchbar i {
+    padding: 8px;
+}
+.searchbar input {
+    background-color: transparent;
+    border:none;
+    padding: 8px;
+    width: 100%;
+}
+
+
+.homepage-Logo {
+    height: 7vh;
+}
+
+.banner {
+    height: 30vh;
+    background-color: var(--black);
+    color: white;
+    padding: 10px;
+}
+.row {
+    display: grid;
+    grid-template-columns: 3fr 12fr 1fr;
+}
+
+/*.column {
+    height: 202vh;
+}
+*/
+
+.column.side-left {
+
+    background-color:var(--darkgrey);
+    overflow: hidden;
+}
+
+.filter-section {
+    margin-left: 2vw;
+    margin-top: 2vw;
+    background-color: var(--darkgrey);
+    padding: 10px;
+    color: var(--black);
+    height: 73vh;
+    overflow-y: auto;
+}
+.filter-options {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-options li {
+    margin: 8px 0;
+}
+
+.filter-options a {
+    text-decoration: none;
+    color: var(--black);
+    display: block;
+    padding: 1vh;
+}
+
+.filter-options a:hover {
+    background-color: var(--lightgrey);
+    border-radius: 5px;
+}
+
+/* Style the scrollbar */
+.filter-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.filter-section::-webkit-scrollbar-thumb {
+    background-color: var(--lightblue);
+    border-radius: 4px;
+}
+
+.filter-section::-webkit-scrollbar-track {
+    background-color: var(--darkgrey);
+}
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.column.middle {
+    background-color: var(--lightgrey);
+    overflow: hidden;
+}
+.content-wrapper {
+    margin-left: 2vw;
+    margin-top: 2vw;
+    margin-bottom: 2vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60vw, 1fr));
+    grid-gap: 3vh;
+}
+
+.content-box {
+    width: 65vw;
+    height: 40vh;
+    background-color: lightcyan;
+    border-radius: 25px;
+    padding: 25px;
+    opacity: 0.8;
+    box-shadow: 3px 3px 1px 1px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.column.side-right {
+
+    background-color:var(--lightgrey);
+    overflow: hidden;
+}
+.show-more-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vh;
+    margin-bottom: 10vh;
+}
+.show-more-button{
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.footer {
+    background-color: var(--white);
+    height: 5vh;
+    padding: 10px;
+    text-align: center;
+}
