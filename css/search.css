@@ -2,11 +2,15 @@
     --lightblue: #7DF9FF;
     --blue: #6edce1;
     --black: #333;
-    --lightgrey: #bbb;
+    --lightgrey: #333;
     --darkgrey: #aaa;
     --white: #f1f1f1;
 }
+/*
+rgb(51, 68, 85)
 
+
+*/
 
 html, body {
     margin: 0;
@@ -215,7 +219,7 @@ nav a:hover {
     margin-top: 2vh;
     width: 65vw;
     height: 40vh;
-    background-color: lightcyan;
+    background-color: var(--white);
     border-radius: 25px;
     padding: 25px;
     opacity: 0.8;
@@ -229,7 +233,7 @@ nav a:hover {
     height: 220px;
     width: 370px;
     overflow: hidden;
-    outline: #04AA6D dotted;
+    /* outline: #04AA6D dotted; */
     margin-left: 0px;
 }
 

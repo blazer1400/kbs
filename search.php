@@ -24,32 +24,14 @@
             <ul class="filter-options">
                 <li>
                     <a href="#">Prijs</a>
-                    <div class="slidecontainer">
-                        <label>
-                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        </label>
-                    </div>
+                    <label>
+                        <input>
+                    </label>
+                    <label>
+                        <input>
+                    </label>
 
                 </li>
-                <hr>
-                <li>
-                    <div class="Bijzonderheden">
-                        <a href="#">Bijzonderheden</a>
-                        <label>
-                            <input type="checkbox" value="Beeldstablisator">Beeldstabilisator<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Bluetooth">Bluetooth<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Draadloos-opladen">Draadloos opladen<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Gezichtsherkenning">Gezichtsherkenning<br>
-                        </label>
-                    </div>
-                </li>
-                <hr>
                 <li>
                     <form action="" method="get">
                     <div class="category">
@@ -75,47 +57,6 @@
                     </div>
                     </form>
                 </li>
-                <hr>
-                <li>
-                    <div class="Totale-opslag">
-                        <a href="#">totale Opslagcapaciteit</a>
-                        <label>
-                            <input type="checkbox" value="64GB">64 GB<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="128GB">128 GB<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="156GB">256 GB<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="1TB">1 TB<br>
-                        </label>
-                    </div>
-                </li>
-                <hr>
-                <li>
-                    <div class="Aansluiting">
-                        <a href="#">Aansluiting</a>
-                        <label>
-                            <input type="checkbox" value="64GB">USB-C<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="128GB">Lightning<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="156GB">Micro-USB<br>
-                        </label>
-                    </div>
-                </li>
-                <hr>
-                <li><a href="#">Filter 5</a></li>
-                <hr>
-                <li><a href="#">Filter 6</a></li>
-                <hr>
-                <li><a href="#">Filter 7</a></li>
-                <hr>
-                <li><a href="#">Filter 8</a></li>
             </ul>
         </div>
     </div>
@@ -195,7 +136,7 @@
                     echo "<div class='content-box'>";
 //                    echo "<div class='content-category'>$productCategory;</div>";
                     echo "<h3 class='content-name'>$productName</h3>";
-                    echo "<div class='content-img'><img src ='img/product_images/$productImage.jpg' alt='$productID'></div>";
+                    echo "<div class='content-img'><img src ='img/products/$productImage.jpg' alt='$productID'></div>";
                     echo "<p class='content-price'>€$productPrice</p>";
                     echo "</div>";
                     echo "</a>";
@@ -210,10 +151,10 @@
 
         </div>
 
-        <div class="show-more-section">
-            <button class="show-more-button">Show more</button>
+<!--        <div class="show-more-section">-->
+<!--            <button class="show-more-button">Show more</button>-->
+<!--        </div>-->
         </div>
-    </div>
 
     <div class="column side-right">
         <div class="feedback">

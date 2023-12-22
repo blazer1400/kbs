@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
         $description = $row["description"];
         $price = $row["price"];
         $category = $row["category"];
-        $imgSrc = "img/product_images/" . $row["image"] . ".jpg";
+        $imgSrc = "img/products/" . $row["image"] . ".jpg";
     }
 } else {
     echo "0 results";
