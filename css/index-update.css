@@ -12,7 +12,7 @@ header {
 .Upper-Section {
     margin-left: 5vw;
     margin-right: 5vw;
-    height: 5vh;
+    height: 3vh;
 }
 
 .Lower-Section {
@@ -72,6 +72,12 @@ nav a:hover {
     border-radius: 5px;
     margin: 0 auto 0 auto;
 }
+.searchbar input:focus {
+    outline: none;
+}
+.searchbar:focus-within {
+    outline: 1px solid black;
+}
 .searchbar i {
     padding: 8px;
 }
@@ -87,20 +93,14 @@ nav a:hover {
     height: 7vh;
 }
 
-.vr {
-    width:90vw;
-    background-color: rgba(211, 211, 211, 0.5);
-    height: 1px;
-    margin: 1rem auto 1rem auto;
-}
-
 .products {
-    height: 350px;
+    height:440px;
     width:100%;
     padding: 2rem 0;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
+    gap: 1rem;
     justify-content: space-around;
 }
 
@@ -119,22 +119,33 @@ nav a:hover {
 }
 .productContainer .productImg {
     border-bottom: 1px solid #6edce1;
-    padding-bottom: 1rem;
-    height: 300px;
-    width: 300px;
+    padding-bottom: 2rem;
+    max-height: 180px;
+    max-width: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .productContainer img {
     max-width: 300px;
-    max-height: 300px;
+    max-height: 200px;
 }
 .productContainer .title {
     font-size: 15px;
 }
 .productContainer .price {
     color: #6edce1;
+    font-weight: 700;
+}
+.productContainer .shoppingCartButton {
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #6edce1;
+}
+.productContainer .shoppingCartButton:hover {
+    background-color: #7DF9FF;
 }
 .productContainer:hover .title {
     text-decoration: underline;
@@ -148,6 +159,7 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     gap:4rem;
+    margin-top:1rem;
 }
 .footer .navigation {
     display:flex;
@@ -167,7 +179,9 @@ nav a:hover {
     padding: 4px;
 }
 .footer .partners {
-
+}
+.banner {
+    position: relative;
 }
 .footer .partners .content {
     display: flex;
@@ -179,6 +193,13 @@ nav a:hover {
 }
 .footer .partners .title span {
     color: lightgray;
+}
+.hr {
+    height: 2px;
+    background-color: rgba(211, 211, 211, 0.5);
+    width: 96%;
+    margin: 2rem auto 2rem auto;
+    border-radius: 5px;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
