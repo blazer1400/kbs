@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Nerdy Gadgets</title>
     <link rel="stylesheet" href="banner.css" type="text/css">
-    <script type="text/javascript" src="cover.js"></script>
+    <script type="text/javascript" src="Banner.js"></script>
     <script type="text/javascript">
     </script>
     <style>
@@ -14,7 +14,6 @@
         }
 
         body {
-            background: #eee;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
             color: #000;
@@ -48,52 +47,51 @@
 </head>
 
 <body>
-<!-- Swiper -->
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <a href="../search.html">
-                <img src="compok.jpg">
+            <a href="search.html">
+                <img src="Images/phones.jpg">
             </a>
         </div>
         <div class="swiper-slide">
-        <a href="../search.html">
-            <img src="vrok.jpg">
-        </a>
-        </div>
-        <div class="swiper-slide">
-        <a href="../search.html">
-            <img src="toyok.jpg">
-        </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="../search.html">
-                <img src="ARCOK.jpg">
+            <a href="search.html">
+                <img src="Images/laptops.jpg">
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="../search.html">
-                <img src="nerdok.jpg">
+            <a href="search.html">
+                <img src="./Images/Computer.jpg">
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="../search.html">
-                <img src="Naamloos.jpg">
+            <a href="search.html">
+                <img src="Images/componenten.jpg">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="search.html">
+                <img src="Images/routers.jpg">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="search.html">
+                <img src="./Images/">
             </a>
         </div>
         <div class="swiper-slide">
             <a href="">
-                <img src="speak.jpg">
+                <img src="./Images/">
             </a>
         </div>
         <div class="swiper-slide">
-            <a href="../search.html">
-                <img src="monitor.jpg">
+            <a href="search.html">
+                <img src="./Images/">
             </a>
-           </div>
+        </div>
         <div class="swiper-slide">
-            <a href="../search.html">
-                <img src="game.jpg">
+            <a href="search.html">
+                <img src="./Images/">
             </a>
         </div>
     </div>
@@ -101,6 +99,9 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
 </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -124,7 +125,5 @@
         },
     });
 </script>
-</body>
-
 </body>
 </html>
