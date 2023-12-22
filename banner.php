@@ -59,7 +59,12 @@
     </style>
     <?php
     include 'dbConnction.php';
-    $userid = rand(1,1000);
+    if(isset($_SESSION['user_id'])){
+        $userid = $_SESSION['user_id'];
+    } else {
+        $userid = "Guest";
+    }
+
     $sql = "SELECT *, COUNT(*) AS order_count 
 FROM nerdy_gadgets_start.order O 
 JOIN user U ON U.id = O.user_id 
@@ -80,37 +85,49 @@ LIMIT 1;";
 <div class="swiper mySwiper">
     <div class="swiper-wrapper" >
     <?php
-    for($i = 0; $i < count($rows); $i++){
-        foreach($rows[$i] as $rij => $waarde){
-            if($rij == 'category') {
-                $category = $waarde;
-                if ($category == 'desktops'){
-                    print(
-                    "<div class=\"swiper-slide\" style='object-fit: contain'>
+    if ($userid == "Guest"){
+        $sql2 = "SELECT DISTINCT category FROM Product";
+        $result2 = mysqli_query($conn, $sql2);
+        $rows2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+        for($i = 0; $i < count($rows2); $i++){
+            $productCategory = $rows2[$i]['category'];
+            print(
+                        "<div class=\"swiper-slide\" style='object-fit: contain'>
+            <a href=\"search.html\"><img src=\"banner/images/$productCategory.jpg\"></a>
+        </div>");
+        }
+    } else {
+        for($i = 0; $i < count($rows); $i++){
+            foreach($rows[$i] as $rij => $waarde){
+                if($rij == 'category') {
+                    $category = $waarde;
+                    if ($category == 'desktops'){
+                        print(
+                        "<div class=\"swiper-slide\" style='object-fit: contain'>
             <a href=\"search.html\"><img src=\"banner/images/monitor.jpg\"></a>
         </div><div class=\"swiper-slide\" style='object-fit: contain'>
             <a href=\"search.html\"><img src=\"banner/images/compok.jpg\"></a>
         </div>");
-                } else{
-                    print(
-                    "<div class=\"swiper-slide\" style='object-fit: contain'>
+                    } else{
+                        print(
+                        "<div class=\"swiper-slide\" style='object-fit: contain'>
             <a href=\"search.html\"><img src=\"banner/images/$category.jpg\"></a>
         </div>");
+                    }
                 }
             }
         }
-    }
-    $limit = 6;
-    $sql2 = "SELECT * FROM Product WHERE category = '$category' LIMIT $limit";
-    $result2 = mysqli_query($conn, $sql2);
-    $rows2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
-    for($i = 0; $i < count($rows2); $i++){
+        $limit = 6;
+        $sql2 = "SELECT * FROM Product WHERE category = '$category' LIMIT $limit";
+        $result2 = mysqli_query($conn, $sql2);
+        $rows2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+        for($i = 0; $i < count($rows2); $i++){
             $productName = $rows2[$i]['name'];
             $productImage = $rows2[$i]['image'];
             $productDescription = $rows2[$i]['description'];
             $productPrice = $rows2[$i]['price'];
             print(
-                "<div class=\"swiper-slide\">
+            "<div class=\"swiper-slide\">
             <a href=\"search.html\" class=\"product-link\">
                 <div id=\"slidefoto\">
                     <img src=\"banner/images/$productImage.jpg\" alt=\"Laptop Image\">
@@ -121,6 +138,7 @@ LIMIT 1;";
                 </div>
             </a>
         </div>");
+        }
     }
 
     ?>
