@@ -85,7 +85,15 @@ LIMIT 1;";
 <div class="swiper mySwiper">
     <div class="swiper-wrapper" >
     <?php
-    if ($userid == "Guest"){
+    if (is_numeric($userid)){
+        $ea = is_numeric($userid) % 14;
+    }
+    if ($ea = 0){
+        for ($i = 0; $i < 6; $i++)
+        print("<div class=\"swiper-slide\" style='object-fit: contain'>
+            <a href=\"search.html\"><img src=\"banner/images/easteregg$i.jpg\"></a>
+        </div>");
+    }elseif ($userid == "Guest"){
         $sql2 = "SELECT DISTINCT category FROM Product";
         $result2 = mysqli_query($conn, $sql2);
         $rows2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
@@ -96,7 +104,7 @@ LIMIT 1;";
             <a href=\"search.html\"><img src=\"banner/images/$productCategory.jpg\"></a>
         </div>");
         }
-    } else {
+    } elseif (is_numeric($userid)) {
         for($i = 0; $i < count($rows); $i++){
             foreach($rows[$i] as $rij => $waarde){
                 if($rij == 'category') {
