@@ -1,0 +1,349 @@
+:root {
+    --lightblue: #7DF9FF;
+    --blue: #6edce1;
+    --black: #333;
+    --white: #f1f1f1;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, serif;
+}
+
+.top-header {
+    background-color: var(--lightblue);
+    padding: 16px;
+    height: 10vh;
+}
+
+.Lower-Section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 5vh;
+}
+
+.Upper-Section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 5vh;
+}
+
+.headerContainer {
+    width: 100%;
+}
+
+.homepage-Logo {
+    height: 7vh;
+}
+
+.loginButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.loginButtons a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.loginButtons a:hover {
+    text-decoration: underline;
+}
+
+.nav-section1 {
+    margin-top: 0;
+    background-color: var(--blue);
+    width: 100%;
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.nav-section1 a {
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+    padding: 8px;
+    transition-duration: 0.2s;
+}
+
+.nav-section1 a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.searchbar {
+    background-color: white;
+    border: 1px solid grey;
+    height: max-content;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: -80px auto 0 auto;
+}
+
+.searchbar i {
+    padding: 8px;
+}
+
+.searchbar input {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    width: 100%;
+}
+
+.product-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: -1100px;
+}
+
+.product-images {
+    margin-top: 10px;
+}
+
+.product-images img {
+    width: 45%;
+    height: auto;
+    display: block;
+    position: relative;
+    left: 180px;
+}
+
+.product-images-colour img {
+    width: 7%;
+    height: 100%;
+    position: relative;
+    border: 2px solid #000;
+}
+
+.product-images-small img{
+    width: 10%;
+    border: 2px solid #000000;
+    position: relative;
+    bottom: 300px;
+    left: 425px;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #0074d9;
+    padding: 4px 8px;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.current-page {
+    padding: 4px 8px;
+}
+
+.memory-selection {
+    display: inline-block;
+    align-items: center;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.memory-selection label {
+    margin-right: 375px;
+}
+
+.memory-selection select {
+    padding: 5px;
+    border: 2px;
+    background: transparent;
+    font-size: 16px;
+    appearance: none;
+    cursor: pointer;
+    padding-right: 25px;
+}
+
+.memory-selection::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.right-product {
+    position: relative;
+    bottom: 480px;
+    left: 1200px;
+    font-size: 20px;
+    color: #333333;
+}
+
+.product-price {
+    font-size: 46px;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    bottom: 10px;
+    right: -420px;
+}
+
+.right-product hr {
+    border-top: 5px solid #333333;
+    margin: 0 0;
+    width: 100%;
+}
+
+.winkel-wagen-button {
+    background-color: #7DF9FF;
+    color: black;
+    padding: 10px 180px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 400px;
+    right: 1310px;
+}
+
+.favorieten-button {
+    color: #f1f1f1;
+    background-color: #333333;
+    padding: 10px 180px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 500px;
+    right: 1320px;
+}
+
+.product-discription {
+    font-size: 25px;
+    font-style: italic;
+    margin-left: 1000px;
+    max-width: 800px; /
+color: black;
+    border: 2px solid black;
+    padding: 20px;
+    position: absolute;
+    top: 1270px;
+}
+
+
+.product-naam {
+    position: absolute;
+    top: 1220px;
+    right: 630px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.tech-specs {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: -500px;
+    top: -80px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.property {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.footer-bar {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-bar ul {
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+}
+
+.footer-bar li {
+    display: inline;
+    margin: 0 35px;
+}
+
+.footer-bar a {
+    text-decoration: underline;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-bar a:hover {
+    text-decoration: underline;
+}
+
+
+.about-us {
+    background-color: #aaaaaa; /* Achtergrondkleur van de header */
+    padding: 20px; /* Binnenste opvulling voor de header */
+    text-align: left; /* Centreer de tekst horizontaal */
+    color: #333; /* Tekstkleur */
+}
+
+
+.about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.about-us p:last-child {
+    margin-top: 10px;
+    font-style: italic;
+    display: block;
+}
+
+.lijn {
+    max-width: 600px;
+}
+ 
