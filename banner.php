@@ -65,7 +65,8 @@
         $userid = "Guest";
     }
 
-    $sql = "SELECT *, COUNT(*) AS order_count 
+    if(is_numeric($userid)){
+        $sql = "SELECT *, COUNT(*) AS order_count 
 FROM nerdy_gadgets_start.order O 
 JOIN user U ON U.id = O.user_id 
 JOIN order_item OI ON OI.order_id = O.id 
@@ -74,8 +75,9 @@ WHERE U.id = $userid
 GROUP BY O.id, category, U.id, U.email 
 ORDER BY order_count desc 
 LIMIT 1;";
-    $result = mysqli_query($conn, $sql);
-    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $result = mysqli_query($conn, $sql);
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
     ?>
 
 

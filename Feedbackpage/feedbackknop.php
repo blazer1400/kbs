@@ -40,7 +40,7 @@ mysqli_query($conn, $createtable);
             <p>Wat vond je van de website?</p>
             <div class="stars" id="starRating">
             <?php
-            $aantalsterren = 10;
+            $aantalsterren = 5;
             for ($i = 1; $i <= $aantalsterren; $i++){
                 print("<div class=\"star-container\" id=\"star$i\">
                     <input type=\"radio\" id=\"ster$i\" name=\"rating\" value=\"$i\" required>
