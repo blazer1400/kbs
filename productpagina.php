@@ -6,21 +6,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="./css/productpag.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "nerdy_gadgets_start";
+    <script src="js/imageenlarger.js"></script>
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    ?>
 </head>
 <body>
 <header class="top-header">
@@ -62,7 +49,7 @@
         <h3>Apple iPhone 13 - 256 GB zwart</h3>
     </div>
     <div class="product-images">
-        <img src="foto's/iiPhone-13-Zwart-Middernacht-Achterkant-mobisite.png" alt="iPhone 13">
+        <img src="foto's/iiPhone-13-Zwart-Middernacht-Achterkant-mobisite.png" alt="iPhone 13" id="vergrotefoto">
     </div>
     <div class="right-product">
         <div class="product-price">
@@ -73,10 +60,10 @@
         </div>
         <p>Beschikbare kleuren</p>
         <div class="product-images-colour">
-            <img src="foto's/refurb-iphone-13-midnight-2023.jpeg" alt="Zwart">
-            <img src="foto's/refurb-iphone-13-pro-green-2023.jpeg" alt="iPhone 13 Groen">
-            <img src="foto's/refurb-iphone-13-starlight-2023.jpeg" alt="starlight">
-            <img src="foto's/refurb-iphone-13-blue-2023.jpeg" alt="blauw">
+            <img src="foto's/refurb-iphone-13-midnight-2023.jpeg" alt="Zwart" id="midnight1">
+            <img src="foto's/refurb-iphone-13-pro-green-2023-removebg-preview.png" alt="iPhone 13 Groen" id="groen1">
+            <img src="foto's/refurb-iphone-13-starlight-2023-removebg-preview.png" alt="starlight" id="starlight1">
+            <img src="foto's/refurb-iphone-13-blue-2023-removebg-preview.png" alt="blauw" id="blauw1">
         </div>
         <div class="memory-selection">
             <label for="memory">Geheugen:</label>
