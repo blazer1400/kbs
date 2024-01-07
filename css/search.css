@@ -6,8 +6,6 @@
     --darkgrey: #aaa;
     --white: #f1f1f1;
 }
-
-
 html, body {
     margin: 0;
     padding: 0;
@@ -19,13 +17,11 @@ header {
     padding: 16px;
     height: 10vh;
 }
-
 .Upper-Section {
     margin-left: 5vw;
     margin-right: 5vw;
     height: 5vh;
 }
-
 .Lower-Section {
     margin-left: 5vw;
     margin-right: 5vw;
@@ -93,7 +89,6 @@ nav a:hover {
     width: 100%;
 }
 
-
 .homepage-Logo {
     height: 7vh;
 }
@@ -108,11 +103,6 @@ nav a:hover {
     display: grid;
     grid-template-columns: 3fr 13fr ;
 }
-
-/*.column {
-    height: 202vh;
-}
-*/
 
 .column.side-left {
 
@@ -192,7 +182,7 @@ nav a:hover {
     opacity: 0.8;
     box-shadow: 3px 3px 1px 1px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     transition: opacity 0.3s ease-in-out;
-    position: relative; /* Add position relative for absolute positioning of price */
+    position: relative;
 }
 
 .content-box:hover{
@@ -200,13 +190,13 @@ nav a:hover {
 }
 .content-box h2 {
     color: var(--black);
-    font-size: 1.5em; /* Adjust font size as needed */
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
 .content-box p {
     color: var(--black);
-    font-size: 1em; /* Adjust font size as needed */
-    line-height: 1.4; /* Adjust line height for better readability */
+    font-size: 1em;
+    line-height: 1.4;
 }
 
 .content-img {
@@ -215,7 +205,7 @@ nav a:hover {
     overflow: hidden;
     margin-left: 0px;
     margin-top: 7vh;
-    margin-bottom: 15px; /* Adjust margin-bottom for more space */
+    margin-bottom: 15px;
 }
 
 .content-img img {
@@ -224,7 +214,7 @@ nav a:hover {
 }
 .content-name {
     font-size: 1.2em;
-    margin-bottom: 10px; /* Adjust margin-bottom for more space */
+    margin-bottom: 10px;
     color: var(--black);
 }
 
@@ -234,11 +224,8 @@ nav a:hover {
     position: absolute;
     bottom: 10px;
     right: 5vw;
-    margin-bottom: 10px; /* Adjust margin-bottom for more space */
+    margin-bottom: 10px;
 }
-
-
-
 
 .column.side-right {
 
@@ -255,7 +242,6 @@ nav a:hover {
     border-radius: 5px;
     margin:5px;
 }
-
 .submit-button{
     color:black;
     background-color: white;
@@ -264,7 +250,6 @@ nav a:hover {
     padding: 5px;
     margin-left: 0px;
 }
-
 .zero-results{
     margin-left: 30vw;
     margin-top: 10vh;

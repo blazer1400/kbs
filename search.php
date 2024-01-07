@@ -69,14 +69,14 @@ $resultCategory = [];
                             <p href="#">Prijs</p>
                             <div class="prijsInput">
                                 <label>
-                                    <input type="number" class="inputPrijs" name="prijs-van" placeholder="prijs van"
+                                    <input type="number" class="inputPrijs" name="prijs-van" placeholder="van"
                                         <?php
                                         if (isset($_POST["prijs-van"]))
                                             echo 'value = "' . $_POST["prijs-van"] . '"'; ?>>
                                 </label>
                                 <p>t/m</p>
                                 <label>
-                                    <input type="number" class="inputPrijs" name="prijs-tot" placeholder="prijs tot"
+                                    <input type="number" class="inputPrijs" name="prijs-tot" placeholder="tot"
                                         <?php
                                         if (isset($_POST["prijs-tot"]))
                                             echo 'value = "' . $_POST["prijs-tot"] . '"'; ?>>
