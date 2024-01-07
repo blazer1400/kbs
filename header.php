@@ -43,6 +43,5 @@
 <nav>
     <a href="./index.php">Home</a>
     <a href="./winkelwagen.php">Winkelwagen</a>
-    <a href="./search.php">Sale</a>
-    <a href="./klantenservice">Klantenservice</a>
+    <a href="./search.php">Productoverzicht</a>
 </nav>
