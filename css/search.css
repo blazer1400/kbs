@@ -106,7 +106,7 @@ nav a:hover {
 }
 .row {
     display: grid;
-    grid-template-columns: 3fr 12fr 1fr;
+    grid-template-columns: 3fr 13fr ;
 }
 
 /*.column {
@@ -177,66 +177,75 @@ nav a:hover {
     grid-template-columns: repeat(auto-fit, minmax(60vw, 1fr));
     grid-gap: 3vh;
 }
+.product-raster a {
+    text-decoration: none;
+}
+
 
 .content-box {
     margin-top: 2vh;
     width: 65vw;
-    height: 40vh;
+    height: 45vh;
     background-color: lightcyan;
     border-radius: 25px;
     padding: 25px;
     opacity: 0.8;
     box-shadow: 3px 3px 1px 1px rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    transition: opacity 0.3s ease-in-out;
+    position: relative; /* Add position relative for absolute positioning of price */
 }
+
 .content-box:hover{
     opacity: 0.6;
+}
+.content-box h2 {
+    color: var(--black);
+    font-size: 1.5em; /* Adjust font size as needed */
+    margin-bottom: 10px;
+}
+.content-box p {
+    color: var(--black);
+    font-size: 1em; /* Adjust font size as needed */
+    line-height: 1.4; /* Adjust line height for better readability */
 }
 
 .content-img {
     height: 220px;
     width: 370px;
     overflow: hidden;
-
     margin-left: 0px;
+    margin-top: 7vh;
+    margin-bottom: 15px; /* Adjust margin-bottom for more space */
 }
 
 .content-img img {
     height: 25vh;
     max-width: 100%;
 }
-
-.product-raster a {
-    text-decoration: none;
-}
-.content-name{
+.content-name {
+    font-size: 1.2em;
+    margin-bottom: 10px; /* Adjust margin-bottom for more space */
     color: var(--black);
+}
 
+.content-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    right: 5vw;
+    margin-bottom: 10px; /* Adjust margin-bottom for more space */
 }
-.content-price{
-    color: var(--black);
-    float:right;
-}
-.content-category{
 
-}
+
+
+
 .column.side-right {
 
     background-color:var(--lightgrey);
     overflow: hidden;
 }
-.show-more-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 8vh;
-    margin-bottom: 10vh;
-}
-.show-more-button{
-    background-color: var(--white);
-    color: var(--black);
-    border-radius: 25px;
-    padding: 10px;
-}
+
 .prijsInput{
     display:flex;
 }
@@ -246,3 +255,19 @@ nav a:hover {
     border-radius: 5px;
     margin:5px;
 }
+
+.submit-button{
+    color:black;
+    background-color: white;
+    border: 1px black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 0px;
+}
+
+.zero-results{
+    margin-left: 30vw;
+    margin-top: 10vh;
+}
+
+
