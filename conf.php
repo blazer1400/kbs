@@ -1,14 +1,14 @@
 <?php
-include 'dbConn.php';
-if(isset($_SESSION['user_id'])){
-    $userid = $_SESSION['user_id'];
-} else {
-    $userid = "Guest";
-}
-//$userid = 17;
+include 'dbConnction.php';
+//if(isset($_SESSION['user_id'])){
+//    $userid = $_SESSION['user_id'];
+//} else {
+//    $userid = "Guest";
+//}
+$userid = 2000;
 $usedb = "USE nerdy_gadgets";
 mysqli_query($conn, $usedb);
-$columnToCheck = 'popup';
+$columnToCheck = 'easter';
 $tableName = 'user';
 
 
@@ -21,8 +21,4 @@ if (!$checkColumnResult) {
 if (mysqli_num_rows($checkColumnResult) == 0) {
     $addColumnQuery = "ALTER TABLE $tableName ADD COLUMN $columnToCheck VARCHAR(255) DEFAULT NULL";
     $addColumnResult = mysqli_query($conn, $addColumnQuery);
-
-    if (!$addColumnResult) {
-        die("Error adding column: " . mysqli_error($conn));
-    }
 }

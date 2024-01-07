@@ -13,7 +13,7 @@
 <body>
 <?php
 include 'dbConnction.php';
-$dbselectie = "USE nerdy_gadgets_start;";
+$dbselectie = "USE nerdy_gadgets;";
 mysqli_query($conn, $dbselectie);
 $createtable = "CREATE TABLE IF NOT EXISTS site_feedback (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

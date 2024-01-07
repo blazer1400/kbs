@@ -53,7 +53,7 @@ for($i = 0; $i < count($yesornull); $i++){
     function submitFormAndClose() {
         $.ajax({
             type: "POST",
-            url: "process_popup.php", // Replace with your server-side script
+            url: "process_popup.php",
             data: $("#myForm").serialize(),
             success: function(response) {
                 console.log(response);

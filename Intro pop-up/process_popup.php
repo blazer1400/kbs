@@ -8,7 +8,7 @@ if(is_numeric($userid)){
     if(isset($_POST['radio'])){
         $newrow = "UPDATE user
 SET popup = 'Yes'
-WHERE id = $userid;";
+WHERE id = $userid";
         mysqli_query($conn, $newrow);
     }
 }

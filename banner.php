@@ -7,6 +7,40 @@
     <script type="text/javascript" src="cover.js"></script>
     <script type="text/javascript">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+    <script>
+        function submitEA() {
+            $.ajax({
+                type: "POST",
+                url: "process_banner.php",
+                data: $("#EaForm").serialize(),
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
+        }
+    </script>
     <style>
         html,
         body {
@@ -59,12 +93,7 @@
     </style>
     <?php
     include 'dbConnction.php';
-    if(isset($_SESSION['user_id'])){
-        $userid = $_SESSION['user_id'];
-    } else {
-        $userid = "Guest";
-    }
-
+    include 'conf.php';
     if(is_numeric($userid)){
         $sql = "SELECT *, COUNT(*) AS order_count 
 FROM nerdy_gadgets_start.order O 
@@ -74,7 +103,7 @@ JOIN Product P ON P.id = OI.product_id
 WHERE U.id = $userid
 GROUP BY O.id, category, U.id, U.email 
 ORDER BY order_count desc 
-LIMIT 1;";
+LIMIT 1";
         $result = mysqli_query($conn, $sql);
         $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
@@ -86,15 +115,38 @@ LIMIT 1;";
 <body>
 <div class="swiper mySwiper">
     <div class="swiper-wrapper" >
+
     <?php
-    if (is_numeric($userid)){
-        $ea = is_numeric($userid) % 14;
+    if (is_numeric($userid)) {
+        $ea = $userid % 1000;
+        if ($ea === 0) {
+            $ea = 0;
+        }
     }
-    if ($ea = 0){
-        for ($i = 0; $i < 6; $i++)
+    $aantalea = 2;
+    $easql = "SELECT easter FROM user WHERE id = $userid";
+    $resultea = mysqli_query($conn, $easql);
+    $rowsea = mysqli_fetch_all($resultea, MYSQLI_ASSOC);
+    for ($i = 0; $i < count($rowsea); $i++){
+        if ($rowsea[$i]['easter'] == "Yes"){
+            $egg = "Yes";
+        }
+    }
+     if (empty($rowsea)) {
+         $egg = "No";
+     }
+    if ($ea == 0 && $egg !== "Yes"){
+        print("<form id=\"EaForm\">
+        <input type=\"radio\" checked id=\"eacheck\" value=\"Yes\" style=\"display: none\" name=\"easter\">
+        <label for=\"eacheck\" style=\"display: none\"></label>
+    </form>");
         print("<div class=\"swiper-slide\" style='object-fit: contain'>
-            <a href=\"search.html\"><img src=\"banner/images/easteregg$i.jpg\"></a>
+            <img src=\"banner/images/easteregg1.jpg\"></a>
         </div>");
+        print("<div class=\"swiper-slide\" style='object-fit: contain'>
+            <a href=\"\" onclick=\"submitEA()\"><img src=\"banner/images/easteregg2.jpg\" onclick=\"submitEA()\"></a>
+        </div>");
+
     }elseif ($userid == "Guest"){
         $sql2 = "SELECT DISTINCT category FROM Product";
         $result2 = mysqli_query($conn, $sql2);
@@ -159,28 +211,7 @@ LIMIT 1;";
     <div class="swiper-pagination"></div>
 </div>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
 </body>
 
 </html>
