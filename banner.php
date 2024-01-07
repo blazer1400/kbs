@@ -7,40 +7,6 @@
     <script type="text/javascript" src="cover.js"></script>
     <script type="text/javascript">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-    <script>
-        function submitEA() {
-            $.ajax({
-                type: "POST",
-                url: "process_banner.php",
-                data: $("#EaForm").serialize(),
-                success: function(response) {
-                    console.log(response);
-                },
-                error: function(error) {
-                    console.error(error);
-                }
-            });
-        }
-    </script>
     <style>
         html,
         body {
@@ -144,7 +110,7 @@ LIMIT 1";
             <img src=\"banner/images/easteregg1.jpg\"></a>
         </div>");
         print("<div class=\"swiper-slide\" style='object-fit: contain'>
-            <a href=\"\" onclick=\"submitEA()\"><img src=\"banner/images/easteregg2.jpg\" onclick=\"submitEA()\"></a>
+            <a href=\"$rick\" onclick=\"submitEA()\"><img src=\"banner/images/easteregg2.jpg\" onclick=\"submitEA()\"></a>
         </div>");
 
     }elseif ($userid == "Guest"){
@@ -204,14 +170,50 @@ LIMIT 1";
     }
 
     ?>
-
+        <script>
+            function submitEA() {
+                console.log("Submit EA Clicked");
+                $.ajax({
+                    type: "POST",
+                    url: "process_banner.php",
+                    data: $("#EaForm").serialize(),
+                    success: function(response) {
+                        console.log("AJAX Success:", response);
+                    },
+                    error: function(error) {
+                        console.error("AJAX Error:", error);
+                    }
+                });
+            }
+        </script>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
 </div>
 
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
 </body>
 
 </html>

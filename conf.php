@@ -10,7 +10,7 @@ $usedb = "USE nerdy_gadgets";
 mysqli_query($conn, $usedb);
 $columnToCheck = 'easter';
 $tableName = 'user';
-
+$rick = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 $checkColumnQuery = "SHOW COLUMNS FROM $tableName LIKE '$columnToCheck'";
 $checkColumnResult = mysqli_query($conn, $checkColumnQuery);
