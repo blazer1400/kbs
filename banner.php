@@ -89,41 +89,30 @@ LIMIT 1";
             $ea = 0;
         }
     }
-    $aantalea = 2;
-    $easql = "SELECT easter FROM user WHERE id = $userid";
-    $resultea = mysqli_query($conn, $easql);
-    $rowsea = mysqli_fetch_all($resultea, MYSQLI_ASSOC);
-    for ($i = 0; $i < count($rowsea); $i++){
-        if ($rowsea[$i]['easter'] == "Yes"){
-            $egg = "Yes";
+    if($userid !== "Guest"){
+        $aantalea = 2;
+        $easql = "SELECT easter FROM user WHERE id = $userid";
+        $resultea = mysqli_query($conn, $easql);
+        $rowsea = mysqli_fetch_all($resultea, MYSQLI_ASSOC);
+        for ($i = 0; $i < count($rowsea); $i++){
+            if ($rowsea[$i]['easter'] == "Yes"){
+                $egg = "Yes";
+            }
         }
-    }
-     if (empty($rowsea)) {
-         $egg = "No";
-     }
-    if ($ea == 0 && $egg !== "Yes"){
-        print("<form id=\"EaForm\">
+        if (empty($rowsea)) {
+            $egg = "No";
+        }
+        if ($ea == 0 && $egg !== "Yes"){
+            print("<form id=\"EaForm\">
         <input type=\"radio\" checked id=\"eacheck\" value=\"Yes\" style=\"display: none\" name=\"easter\">
         <label for=\"eacheck\" style=\"display: none\"></label>
     </form>");
-        print("<div class=\"swiper-slide\" style='object-fit: contain'>
+            print("<div class=\"swiper-slide\" style='object-fit: contain'>
             <img src=\"banner/images/easteregg1.jpg\"></a>
         </div>");
-        print("<div class=\"swiper-slide\" style='object-fit: contain'>
+            print("<div class=\"swiper-slide\" style='object-fit: contain'>
             <a href=\"$rick\" onclick=\"submitEA()\"><img src=\"banner/images/easteregg2.jpg\" onclick=\"submitEA()\"></a>
-        </div>");
-
-    }elseif ($userid == "Guest"){
-        $sql2 = "SELECT DISTINCT category FROM Product";
-        $result2 = mysqli_query($conn, $sql2);
-        $rows2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
-        for($i = 0; $i < count($rows2); $i++){
-            $productCategory = $rows2[$i]['category'];
-            print(
-                        "<div class=\"swiper-slide\" style='object-fit: contain'>
-            <a href=\"search.html\"><img src=\"banner/images/$productCategory.jpg\"></a>
-        </div>");
-        }
+        </div>");}
     } elseif (is_numeric($userid)) {
         for($i = 0; $i < count($rows); $i++){
             foreach($rows[$i] as $rij => $waarde){
@@ -165,6 +154,17 @@ LIMIT 1";
                     <h1 class=\"product-prijs\">€$productPrice</h1>
                 </div>
             </a>
+        </div>");
+        }
+    }elseif ($userid == "Guest"){
+        $sql2 = "SELECT DISTINCT category FROM Product";
+        $result2 = mysqli_query($conn, $sql2);
+        $rows2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+        for($i = 0; $i < count($rows2); $i++){
+            $productCategory = $rows2[$i]['category'];
+            print(
+                        "<div class=\"swiper-slide\" style='object-fit: contain'>
+            <a href=\"search.html\"><img src=\"banner/images/$productCategory.jpg\"></a>
         </div>");
         }
     }

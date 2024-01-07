@@ -1,11 +1,11 @@
 <?php
 include 'dbConnction.php';
-//if(isset($_SESSION['user_id'])){
-//    $userid = $_SESSION['user_id'];
-//} else {
-//    $userid = "Guest";
-//}
-$userid = 2000;
+if(isset($_SESSION['user_id'])){
+    $userid = $_SESSION['user_id'];
+} else {
+    $userid = "Guest";
+}
+//$userid = 2000;
 $usedb = "USE nerdy_gadgets";
 mysqli_query($conn, $usedb);
 $columnToCheck = 'easter';
