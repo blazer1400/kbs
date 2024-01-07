@@ -1,5 +1,15 @@
 let feedBox = document.getElementById("feedBox");
+let starRating = document.getElementById("starRating");
+let star1 = document.getElementById("star1");
+let star2 = document.getElementById("star2");
+let star3 = document.getElementById("star3");
+let star4 = document.getElementById("star4");
+let star5 = document.getElementById("star5");
+let feedBack = document.getElementById("feedBack");
+let thank = document.getElementById("thank");
+let thxMS = document.getElementById("thxMS");
 
+// Here, you can send the feedback data to your server or perform any desired actions.
 // Function to display the feedBox pop-up
 function displayFeedBox() {
     feedBox.classList.remove("remove");
@@ -18,6 +28,7 @@ function removeFeedBox() {
     feedBox.classList.add("remove");
     thank.classList.remove("display")
     feedBox.classList.remove("changesize")
+    document.getElementById("feedbackForm").reset();
 }
 function removeFeedBack() {
     feedBack.classList.add("none");
@@ -26,101 +37,9 @@ function removeFeedBack() {
     thank.classList.remove("none");
     const input = document.querySelector('.input');
     input.value = '';
-
-}
-let starRating = document.getElementById("starRating");
-let star1 = document.getElementById("star1");
-let star2 = document.getElementById("star2");
-let star3 = document.getElementById("star3");
-let star4 = document.getElementById("star4");
-let star5 = document.getElementById("star5");
-let feedBack = document.getElementById("feedBack");
-let thank = document.getElementById("thank");
-
-function addChecked1() {
-    star1.classList.add("checked");
-    star2.classList.remove("checked");
-    star3.classList.remove("checked");
-    star4.classList.remove("checked");
-    star5.classList.remove("checked");
-    star1.classList.add("clicked");
-    removeHoverListeners();
-    star1.addEventListener("mouseover", addChecked1); // Re-add hover listener for this star
-}
-
-function addChecked2() {
-    star2.classList.add("checked");
-    star1.classList.remove("checked");
-    star3.classList.remove("checked");
-    star4.classList.remove("checked");
-    star5.classList.remove("checked");
-    star2.classList.add("clicked");
-    removeHoverListeners();
-    star2.addEventListener("mouseover", addChecked2); // Re-add hover listener for this star
-}
-
-function addChecked3() {
-    star3.classList.add("checked");
-    star2.classList.remove("checked");
-    star1.classList.remove("checked");
-    star4.classList.remove("checked");
-    star5.classList.remove("checked");
-    star3.classList.add("clicked");
-    removeHoverListeners();
-    star3.addEventListener("mouseover", addChecked3); // Re-add hover listener for this star
-}
-
-function addChecked4() {
-    star4.classList.add("checked");
-    star2.classList.remove("checked");
-    star3.classList.remove("checked");
-    star1.classList.remove("checked");
-    star5.classList.remove("checked");
-    star4.classList.add("clicked");
-    removeHoverListeners();
-    star4.addEventListener("mouseover", addChecked4); // Re-add hover listener for this star
-}
-
-function addChecked5() {
-    star5.classList.add("checked");
-    star2.classList.remove("checked");
-    star3.classList.remove("checked");
-    star4.classList.remove("checked");
-    star1.classList.remove("checked");
-    star5.classList.add("clicked");
-    removeHoverListeners();
-    star5.addEventListener("mouseover", addChecked5); // Re-add hover listener for this star
-}
-
-star1.addEventListener("mouseout", function () {
-    if (!star1.classList.contains("clicked")) {
-        star1.classList.remove("checked");
-    }
-});
-
-star2.addEventListener("mouseout", function () {
-    if (!star2.classList.contains("clicked")) {
-        star2.classList.remove("checked");
-    }
-});
-
-star3.addEventListener("mouseout", function () {
-    if (!star3.classList.contains("clicked")) {
-        star3.classList.remove("checked");
-    }
-});
-
-star4.addEventListener("mouseout", function () {
-    if (!star4.classList.contains("clicked")) {
-        star4.classList.remove("checked");
-    }
-});
-
-star5.addEventListener("mouseout", function () {
-    if (!star5.classList.contains("clicked")) {
-        star5.classList.remove("checked");
-    }
-});
+    isClicked1 = false;
+    isClicked2 = false;
+    isClicked3 = false;
 
 function removeHoverListeners() {
     star1.removeEventListener("mouseover", addChecked1);
@@ -174,7 +93,9 @@ colorButton3.addEventListener('click', () => {
     isClicked2 = false;
     colorButton.classList.remove('clicked');
     colorButton2.classList.remove('clicked');
-});
+});}
+
+
 
 
 

@@ -1,8 +1,9 @@
 let popUpBox = document.getElementById("popUp");
-
+let form = document.getElementById("myForm");
 //DISPLAY POP-UO
 function displayPopup(){
     popUpBox.classList.remove("display");
+    form.submit();
 }
 document.getElementById('show-button').addEventListener('click', function() {
     var overlay = document.getElementById('overlay');
