@@ -121,14 +121,14 @@ LIMIT 1";
                     if ($category == 'desktops'){
                         print(
                         "<div class=\"swiper-slide\" style='object-fit: contain'>
-            <a href=\"search.html\"><img src=\"banner/images/monitor.jpg\"></a>
+            <a href=\"search.php\"><img src=\"banner/images/monitor.jpg\"></a>
         </div><div class=\"swiper-slide\" style='object-fit: contain'>
-            <a href=\"search.html\"><img src=\"banner/images/compok.jpg\"></a>
+            <a href=\"search.php\"><img src=\"banner/images/compok.jpg\"></a>
         </div>");
                     } else{
                         print(
                         "<div class=\"swiper-slide\" style='object-fit: contain'>
-            <a href=\"search.html\"><img src=\"banner/images/$category.jpg\"></a>
+            <a href=\"search.php\"><img src=\"banner/images/$category.jpg\"></a>
         </div>");
                     }
                 }
@@ -145,7 +145,7 @@ LIMIT 1";
             $productPrice = $rows2[$i]['price'];
             print(
             "<div class=\"swiper-slide\">
-            <a href=\"search.html\" class=\"product-link\">
+            <a href=\"search.php\" class=\"product-link\">
                 <div id=\"slidefoto\">
                     <img src=\"banner/images/$productImage.jpg\" alt=\"Laptop Image\">
                 </div>
@@ -164,7 +164,7 @@ LIMIT 1";
             $productCategory = $rows2[$i]['category'];
             print(
                         "<div class=\"swiper-slide\" style='object-fit: contain'>
-            <a href=\"search.html\"><img src=\"banner/images/$productCategory.jpg\"></a>
+            <a href=\"search.php\"><img src=\"banner/images/$productCategory.jpg\"></a>
         </div>");
         }
     }
