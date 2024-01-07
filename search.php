@@ -18,42 +18,11 @@
     <div class="column side-left">
         <div class="filter-section">
             <h3>Filters</h3>
-
-
+            <form action="" method="post">
             <hr>
             <ul class="filter-options">
-                <li>
-                    <a href="#">Prijs</a>
-                    <div class="slidecontainer">
-                        <label>
-                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        </label>
-                    </div>
-
-                </li>
-                <hr>
-                <li>
-                    <div class="Bijzonderheden">
-                        <a href="#">Bijzonderheden</a>
-                        <label>
-                            <input type="checkbox" value="Beeldstablisator">Beeldstabilisator<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Bluetooth">Bluetooth<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Draadloos-opladen">Draadloos opladen<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Gezichtsherkenning">Gezichtsherkenning<br>
-                        </label>
-                    </div>
-                </li>
-                <hr>
-                <li>
-                    <form action="" method="get">
                     <div class="category">
-                        <a href="#">Category</a>
+                        <p href="#">Category</p>
                         <?php
                         $servername = "localhost";
                         $username = "root";
@@ -83,7 +52,7 @@
                                 $productCategory = $row["category"];
                                 $resultCategory[] = $productCategory;
                                 echo "<label>";
-                                echo "<input type='checkbox' " . (isset($_GET[$productCategory]) ? "checked='checked'" : "") . " onchange='this.form.submit()' name='$productCategory'>$productCategory <br>";
+                                echo "<input type='checkbox' " . (isset($_POST[$productCategory]) ? "checked='checked'" : "") . " onchange='this.form.submit()' name='$productCategory'>$productCategory <br>";
                                 echo "</label>";
 
                             }
@@ -95,51 +64,31 @@
                         }
                         $conn->close();
                         ?>
+                        <hr>
+                        <li>
+                            <p href="#">Prijs</p>
+                            <div class="prijsInput">
+                                <label>
+                                    <input type="number" class="inputPrijs" name="prijs-van" placeholder="prijs van"
+                                        <?php
+                                             if (isset($_POST["prijs-van"]))
+                                                 echo 'value = "' . $_POST["prijs-van"] . '"';?>>
+                                </label>
+                                <p>t/m</p>
+                                <label>
+                                    <input type="number" class="inputPrijs" name="prijs-tot" placeholder="prijs tot"
+                                        <?php
+                                             if (isset($_POST["prijs-tot"]))
+                                                 echo 'value = "' . $_POST["prijs-tot"] . '"';?>>
+                                </label>
+                            </div>
+                        </li>
+
                     </div>
-                    </form>
-                </li>
-                <hr>
-                <li>
-                    <div class="Totale-opslag">
-                        <a href="#">totale Opslagcapaciteit</a>
-                        <label>
-                            <input type="checkbox" value="64GB">64 GB<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="128GB">128 GB<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="156GB">256 GB<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="1TB">1 TB<br>
-                        </label>
-                    </div>
-                </li>
-                <hr>
-                <li>
-                    <div class="Aansluiting">
-                        <a href="#">Aansluiting</a>
-                        <label>
-                            <input type="checkbox" value="64GB">USB-C<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="128GB">Lightning<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" value="156GB">Micro-USB<br>
-                        </label>
-                    </div>
-                </li>
-                <hr>
-                <li><a href="#">Filter 5</a></li>
-                <hr>
-                <li><a href="#">Filter 6</a></li>
-                <hr>
-                <li><a href="#">Filter 7</a></li>
-                <hr>
-                <li><a href="#">Filter 8</a></li>
+
+
             </ul>
+            </form>
         </div>
     </div>
 
@@ -164,22 +113,22 @@
             $sqlConditite = "";
             $sqlCategorys = [];
 
-            if(isset($_GET["$resultCategory[0]"])){
+            if(isset($_POST["$resultCategory[0]"])){
                 $sqlCategorys[] = "laptops";
             }
-            if(isset($_GET[$resultCategory[1]])){
+            if(isset($_POST[$resultCategory[1]])){
                 $sqlCategorys[] = "phones";
             }
-            if(isset($_GET[$resultCategory[2]])){
+            if(isset($_POST[$resultCategory[2]])){
                 $sqlCategorys[] = "opslag";
             }
-            if(isset($_GET[$resultCategory[3]])){
+            if(isset($_POST[$resultCategory[3]])){
                 $sqlCategorys[] = "routers";
             }
-            if(isset($_GET[$resultCategory[4]])){
+            if(isset($_POST[$resultCategory[4]])){
                 $sqlCategorys[] = "componenten";
             }
-            if(isset($_GET[$resultCategory[5]])){
+            if(isset($_POST[$resultCategory[5]])){
                 $sqlCategorys[] = "desktops";
             }
 
@@ -232,9 +181,7 @@
 
         </div>
 
-        <div class="show-more-section">
-            <button class="show-more-button">Show more</button>
-        </div>
+
     </div>
 
     <div class="column side-right">
