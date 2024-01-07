@@ -33,52 +33,7 @@
     </style>
 </head>
 <body>
-<header>
-    <div class="Upper-Section">
-        <img class="homepage-Logo" src="img/Logo-NerdyGadgets.png" alt="Logo">
-        <div class="headerContainer">
-            <div class="loginButtons">
-                <a href="./uitchecken">Uitchecken</a>
-                <?php
-
-                require('./php/db_connection.php');
-                session_start();
-
-                if (empty($_SESSION['user_id'])) {
-                    echo '<a href="./login.php">Login/Registratie</a>';
-                } else {
-                    $name = $conn->query("SELECT first_name, surname FROM user WHERE id = " . $_SESSION['user_id'])->fetch_row();
-                    echo '<a href="./php/logout.php">Uitloggen</a>
-                <div class="flex items-center gap-1">
-                    <i class="uil uil-user"></i>
-                    <p>'.(strtoupper(substr($name[0], 0, 1)) . substr($name[0], 1)).' '.(strtoupper(substr($name[1], 0, 1)) . substr($name[1], 1)).'</p>
-                </div>';
-                }
-
-
-                ?>
-            </div>
-        </div>
-    </div>
-    <div class="Lower-Section">
-        <div class="searchbarContainer">
-            <form method="GET" action="./search.php">
-                <span class="searchbar">
-                    <i class="uil uil-search"></i>
-                    <input name="q" type="text" />
-                </span>
-            </form>
-        </div>
-    </div>
-
-</header>
-
-<nav>
-    <a href="./winkel">Winkel</a>
-    <a href="./gadgets">Gadgets</a>
-    <a href="./search.html">Sale</a>
-    <a href="./klantenservice">Klantenservice</a>
-</nav>
+<?php include('./header.php') ?>
 
 <div class="banner">
 
@@ -162,26 +117,25 @@
 
 <div class="hr"></div>
 
-<div class="products">
+<div class="flex items-center justify-center gap-8 px-8 h-96">
     <?php
     require('./php/db_connection.php');
 
     $query = $conn->query('SELECT * FROM product ORDER BY RAND() LIMIT 4');
     if ( $query ) {
         while ($row = $query->fetch_assoc()) {
-            echo '<div class="productContainer">
-                        <div class="productImg">
-                            <img src="./img/products/' . $row['image'] . '.jpg" />
+            echo '<div class="pt-4 border flex flex-col shadow h-full w-full group cursor-pointer" onclick="window.location = `./product.php?id=` + ' . $row['id'] . '">
+                        <div class="border-b pb-4 h-60 w-full flex items-center justify-center">
+                            <img src="./img/products/' . $row['image'] . '.jpg" class="max-w-60 max-h-40 mx-auto " />
                         </div>
-                        <p class="title">' . $row['name'] . '</p>
-                        <p class="price">&euro; ' . $row['price'] . '</p>
-                        <form method="POST" action="./php/addToShoppingCart.php">
-                            <input hidden value="' . $row['id'] . '" name="id" />
-                            <button type="submit" class="shoppingCartButton">
-                                <span>Aan winkelwagen toevoegen</span>
-                                <i class="uil uil-shopping-basket"></i>
-                            </input>
-                        </form>
+                     
+                            <p class="mt-2 font-medium text-center">' . (strlen($row['name']) > 40 ? (str_split($row['name'], 40)[0] . '...') : $row['name']) . '</p>
+                            <p class="text-[#6edce1] font-bold text-center">&euro; ' . $row['price'] . '</p>
+                    
+                        <div class="bg-[#6edce1] group-hover:bg-[#7DF9FF] w-full pl-4 mt-2 text-white pr-4 h-16 flex items-center justify-center gap-2">
+                            Product bekijken
+                            <i class="uil uil-angle-right"></i>         
+                        </div>
                     </div>';
         }
     } else {

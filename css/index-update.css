@@ -47,16 +47,17 @@ nav {
     margin-top: 0;
     background-color: #6edce1;
     width: 100%;
-    padding: 4px 0px;
     display: flex;
     justify-content: space-around;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 nav a {
     text-decoration: none;
-    border-radius: 5px;
     color: black;
-    padding: 8px;
+    padding: 0.8rem;
+    width: 100%;
+    text-align: center;
+    height:100%;
     transition-duration: 0.2s;
 }
 nav a:hover {
@@ -102,53 +103,6 @@ nav a:hover {
     align-items: start;
     gap: 1rem;
     justify-content: space-around;
-}
-
-.productContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    border: 1px solid rgba(200, 200, 200, 0.5);
-    background-color:white;
-    border-radius: 5px;
-    width: 300px;
-    height: 100%;
-    padding: 1rem;
-    cursor: pointer;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-}
-.productContainer .productImg {
-    border-bottom: 1px solid #6edce1;
-    padding-bottom: 2rem;
-    max-height: 180px;
-    max-width: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.productContainer img {
-    max-width: 300px;
-    max-height: 200px;
-}
-.productContainer .title {
-    font-size: 15px;
-}
-.productContainer .price {
-    color: #6edce1;
-    font-weight: 700;
-}
-.productContainer .shoppingCartButton {
-    border: none;
-    width: 100%;
-    padding: 1rem;
-    cursor: pointer;
-    background-color: #6edce1;
-}
-.productContainer .shoppingCartButton:hover {
-    background-color: #7DF9FF;
-}
-.productContainer:hover .title {
-    text-decoration: underline;
 }
 
 /* Style the footer */
