@@ -64,7 +64,7 @@ $conn->close();
 
 <div class="max-w-screen h-max grid grid-cols-10 justify-center m-16">
     <div class="w-full col-span-6">
-        <img src="<?php echo $imgSrc;?>"/>
+        <img src="<?php echo $imgSrc;?>" class="max-h-80"/>
         <p class="text-xl font-semibold mt-8 border-b pb-8"><?php echo $productName ?></p>
         <p class="mt-8"><?php echo $description ?></p>
     </div>
