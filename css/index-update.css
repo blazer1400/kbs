@@ -10,15 +10,15 @@ header {
 }
 
 .Upper-Section {
-    margin-left: 5vw;
-    margin-right: 5vw;
-    height: 3vh;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 2rem;
 }
 
 .Lower-Section {
-    margin-left: 5vw;
-    margin-right: 5vw;
-    height: 5vh;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 2rem;
 }
 .headerContainer {
     width: 100%;
