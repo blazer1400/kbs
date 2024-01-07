@@ -120,7 +120,7 @@
                 // PRODUCT RASTER
                 echo '<div class="product-raster">';
                 $connection = $conn;
-                if ($_GET['q']) {
+                if (isset($_GET['q'])) {
                     $sql = $sql . " WHERE name LIKE '%" . $_GET['q'] . "%'";
                 }
                 $res = $conn->query($sql);
