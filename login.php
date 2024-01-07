@@ -5,6 +5,44 @@
     <title>NerdyGadgets</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <style>
+        .jumpAway {
+            animation-name: jumpAway;
+            animation-duration: 0.2s;
+        }
+        @keyframes jumpAway {
+            0% {
+                left: 0;
+                top: 0;
+            }
+            50% {
+                left: 7px;
+                top: -10px;
+            }
+            100% {
+                left: 15px;
+                top: 0;
+            }
+        }
+        .jumpBack {
+            animation-name: jumpBack;
+            animation-duration: 0.2s;
+        }
+        @keyframes jumpBack {
+            0% {
+                left: 15px;
+                top: 0;
+            }
+            50% {
+                left: 7px;
+                top: -10px;
+            }
+            100% {
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -88,7 +126,7 @@ if (!empty($_SESSION['user_id'])) {
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
                     <span class="block border rounded w-full h-max relative">
-                        <label class="absolute -top-3 bg-white px-2 left-2 font-medium text-sm">Postcode</label>
+                        <label class="absolute -top-3 bg-white px-2 left-2 font-medium text-sm">Postcode <span class="text-blue-500 relative px-2 ml-1" onmouseover="jumpAway()" onmouseleave="jumpBack()"><span id="question" class="pointer-events-none absolute left-0">(?)</span></span></label>
                         <input name="postal_code" class="h-10 px-2 rounded w-full outline-none"/>
                     </span>
                     <span class="block border rounded w-full h-max relative col-span-2">
@@ -136,6 +174,20 @@ if (!empty($_SESSION['user_id'])) {
 
         regForm.classList.add('hidden')
         loginForm.classList.remove('hidden')
+    }
+
+    function jumpAway() {
+        document.getElementById('question').classList.add('jumpAway', 'left-[15px]', 'top-0')
+        setTimeout(function () {
+            document.getElementById('question').classList.remove('jumpAway')
+        }, 200)
+    }
+    function jumpBack() {
+        document.getElementById('question').classList.add('jumpBack')
+        document.getElementById('question').classList.remove('left-[15px]', 'top-0')
+        setTimeout(function () {
+            document.getElementById('question').classList.remove('jumpBack')
+        }, 200)
     }
 
 </script>
