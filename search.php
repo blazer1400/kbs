@@ -8,11 +8,11 @@
 </head>
 <body>
 
-    <?php include 'header.php';
+    <?php include 'header.php';    ?>
+    <?php
+    $resultCategory = [];
+
     ?>
-
-
-
 
 <div class="row">
     <div class="column side-left">
@@ -36,24 +36,50 @@
                     <form action="" method="get">
                     <div class="category">
                         <a href="#">Category</a>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Laptops"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Laptops">Laptops<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Phones"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Phones">Phones<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Opslag"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Opslag">Opslag<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Routers"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Routers">Routers<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Componenten"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Componenten">Componenten<br>
-                        </label>
-                        <label>
-                            <input type="checkbox" <?php if(isset($_GET["Desktops"])) echo "checked='checked'"; ?> onchange="this.form.submit()" name="Desktops">Desktops<br>
-                        </label>
+                        <?php
+                        echo "";
+                        $servername = "127.0.0.1";
+                        $username = "root";
+                        $password = "Lovesaraamal2001";
+                        $dbname = "nerdy_gadgets";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname,3306); // Connect direct met de database ipv alleen met SQL
+                        // Check connection
+                        echo "";
+                        if ($conn->connect_error) {
+                            echo "Connection failed: " . $conn->connect_error;
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        // QUERY
+                        $sql = "SELECT DISTINCT category FROM product";
+                        // RESULT
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // PRODUCT RASTER
+                            echo '<div class="product-raster">';
+                            $connection = mysqli_connect('127.0.0.1', 'root', $password, 'nerdy_gadgets', '3306');
+                            $sql_selectALL = "SELECT * FROM product";
+                            $res = mysqli_query($connection, $sql);
+
+                            while ($row = mysqli_fetch_assoc($res)) {
+                                $productCategory = $row["category"];
+                                $resultCategory[] = $productCategory;
+                                echo "<label>";
+                                echo "<input type='checkbox' " . (isset($_GET[$productCategory]) ? "checked='checked'" : "") . " onchange='this.form.submit()' name='$productCategory'>$productCategory <br>";
+                                echo "</label>";
+
+                            }
+                            mysqli_close($connection);
+                            echo "</div>";
+                        } else {
+                            echo "0 results";
+
+                        }
+                        $conn->close();
+                        ?>
                     </div>
                     </form>
                 </li>
@@ -64,13 +90,13 @@
     <div class="column middle">
         <div class="content-wrapper">
             <?php
-            $servername = "localhost";
+            $servername = "127.0.0.1";
             $username = "root";
-            $password = "";
+            $password = "Lovesaraamal2001";
             $dbname = "nerdy_gadgets";
 
             // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname); // Connect direct met de database ipv alleen met SQL
+            $conn = new mysqli($servername, $username, $password, $dbname, 3306); // Connect direct met de database ipv alleen met SQL
             // Check connection
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -82,24 +108,23 @@
             $sqlConditite = "";
             $sqlCategorys = [];
 
-            $categoryChecked = 0;
-            if(isset($_GET["Laptops"])){
-                $sqlCategorys[] = "Laptops";
+            if(isset($_GET["$resultCategory[0]"])){
+                $sqlCategorys[] = "laptops";
             }
-            if(isset($_GET["Phones"])){
-                $sqlCategorys[] = "Phones";
+            if(isset($_GET[$resultCategory[1]])){
+                $sqlCategorys[] = "phones";
             }
-            if(isset($_GET["Opslag"])){
-                $sqlCategorys[] = "Opslag";
+            if(isset($_GET[$resultCategory[2]])){
+                $sqlCategorys[] = "opslag";
             }
-            if(isset($_GET["Routers"])){
-                $sqlCategorys[] = "Routers";
+            if(isset($_GET[$resultCategory[3]])){
+                $sqlCategorys[] = "routers";
             }
-            if(isset($_GET["Componenten"])){
-                $sqlCategorys[] = "Componenten";
+            if(isset($_GET[$resultCategory[4]])){
+                $sqlCategorys[] = "componenten";
             }
-            if(isset($_GET["Desktops"])){
-                $sqlCategorys[] = "Desktops";
+            if(isset($_GET[$resultCategory[5]])){
+                $sqlCategorys[] = "desktops";
             }
 
             if(count($sqlCategorys) == 1){
@@ -108,7 +133,7 @@
                 $sql = "SELECT * FROM product $sqlConditite";
             }else if(count($sqlCategorys ) > 1){
                 foreach ($sqlCategorys as $yuh){
-                    echo "<script type='text/javascript'>alert('$yuh');</script>";
+                    echo "";
                 }
                 $sql = "SELECT * FROM product";
             }else{
