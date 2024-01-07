@@ -62,7 +62,7 @@
     </div>
     <div class="Lower-Section">
         <div class="searchbarContainer">
-            <form method="GET" action="./search.html">
+            <form method="GET" action="./search.php">
                 <span class="searchbar">
                     <i class="uil uil-search"></i>
                     <input name="q" type="text" />

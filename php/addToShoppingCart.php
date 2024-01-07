@@ -4,12 +4,13 @@ session_start();
 
 require('./db_connection.php');
 
-if ($_POST['id']) {
+if ($_GET['id']) {
     if (is_array($_SESSION['cart'])) {
-        $_SESSION['cart'][] = $_POST['id'];
+        $_SESSION['cart'][] = $_GET['id'];
     } else {
-        $_SESSION['cart'] = [$_POST['id']];
+        $_SESSION['cart'] = [$_GET['id']];
     }
+    header('Location: ../product.php?id=' . $_GET['id']);
 } else {
     die('Geen product geselecteerd');
 }

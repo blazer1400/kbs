@@ -49,45 +49,37 @@ $conn->close();
     <meta charset="UTF-8">
     <title>KBS</title>
     <link rel="stylesheet" href="css/search.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 <body>
-<header>
-    <div class="Upper-Section">
-        <div class="headerContainer">
-            <div class="loginButtons">
-                <a href="./uitchecken" >Uitchecken</a>
-                <a href="./login" >Login/Registratie</a>
-            </div>
-        </div>
+
+<?php include('./header.php'); ?>
+
+
+<button class="p-2 ml-4 mt-4 bg-gray-100 hover:bg-gray-200 rounded" onclick="window.location = ''">
+    <i class="uil uil-angle-left"></i>
+    Terug
+</button>
+
+<div class="max-w-screen h-max grid grid-cols-10 justify-center m-16">
+    <div class="w-full col-span-6">
+        <img src="<?php echo $imgSrc;?>"/>
+        <p class="text-xl font-semibold mt-8 border-b pb-8"><?php echo $name ?></p>
+        <p class="mt-8"><?php echo $description ?></p>
     </div>
-    <div class="Lower-Section">
-        <div>
-            <img class="homepage-Logo" src="img/Logo-NerdyGadgets.png" alt="Logo">
-        </div>
-        <div class="searchbarContainer">
-                <span class="searchbar">
-                    <i class="uil uil-search"></i>
-                    <label for="searchbar"></label><input id="searchbar">
-                </span>
-        </div>
+    <div class="col-span-1 flex items-center justify-center">
+        <div class="h-full bg-gray-200 w-px"></div>
     </div>
-
-</header>
-
-<nav>
-    <a href="./winkel">Winkel</a>
-    <a href="./gadgets">Gadgets</a>
-    <a href="./sale">Sale</a>
-    <a href="./klantenservice">Klantenservice</a>
-</nav>
-
-
-
-    <h2><?php echo $name ?></h2><br>
-    <h3><?php echo "Prijs: €$price" ?></h3><br>
-    <h4><?php echo "Categorie: $category" ?></h4><br>
-    <p><?php echo $description ?></p><br>
-    <img src="<?php echo $imgSrc ?>" alt="<?php echo $name ?>"><br>
+    <div class="w-full py-4 col-span-3">
+        <p class="font-bold mt-4 text-4xl text-white rounded-xl p-4 text-right w-max ml-auto bg-[#6edce1]">&euro; <?php echo $price ?></p>
+        <button class="w-full p-4 bg-[#6edce1] hover:bg-[#7DF9FF] text-white rounded-lg mt-40 flex items-center gap-4 justify-center"
+                onclick="window.location = './php/addToShoppingCart.php?id=' + <?php echo $id ?>">
+            Toevoegen aan winkelwagen
+            <i class="uil uil-shopping-basket"></i>
+        </button>
+    </div>
+</div>
 
 
 
@@ -95,7 +87,6 @@ $conn->close();
 <div class="footer">
     <?php include 'footer.php';
     ?>
-    <p>Footer</p>
 </div>
 </body>
 </html>
