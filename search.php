@@ -112,17 +112,23 @@
             }else{
                 $sql = "SELECT * FROM product";
             }
+
             // RESULT
             $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
+            if ($result && $result->num_rows > 0) {
                 // PRODUCT RASTER
                 echo '<div class="product-raster">';
                 $connection = $conn;
-                $sql_selectALL = "SELECT * FROM product";
-                $res = mysqli_query($connection, $sql);
+                if ($_GET['q']) {
+                    $sql = $sql . " WHERE name LIKE '%" . $_GET['q'] . "%'";
+                }
+                $res = $conn->query($sql);
 
-                while ($row = mysqli_fetch_assoc($res)) {
+                print_r($conn->error);
+
+
+                while ($row = $res->fetch_assoc()) {
                     $productID = $row["id"];
                     $productImage = $row["image"];
                     $productName = $row["name"];
@@ -144,7 +150,6 @@
             } else {
                 echo "0 results";
             }
-            $conn->close();
             ?>
 
         </div>
