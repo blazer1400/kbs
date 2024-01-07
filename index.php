@@ -167,7 +167,7 @@
     require('./php/db_connection.php');
 
     $query = $conn->query('SELECT * FROM product ORDER BY RAND() LIMIT 4');
-    if ($query) {
+    if ( $query ) {
         while ($row = $query->fetch_assoc()) {
             echo '<div class="productContainer">
                         <div class="productImg">
