@@ -34,86 +34,8 @@
 </head>
 <body>
 <?php include('./header.php') ?>
-
-<div class="banner">
-
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/compok.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/vrok.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/toyok.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/ARCOK.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/nerdok.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/Naamloos.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="./banner/speak.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/monitor.jpg">
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="./search.html">
-                    <img src="./banner/game.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-</div>
+<?php include 'banner.php';
+?>
 
 <div class="hr"></div>
 
