@@ -59,7 +59,7 @@
                 $query = $conn->query('SELECT * FROM product WHERE id = ' . $item);
                 $row = $query->fetch_assoc();
                 $total += $row['price'];
-                echo '<li>' . $row['name'] . ' - &euro; ' . $row['price'] . '</li>';
+                echo '<li>' . $row['name'] . ' - &euro; ' . $row['price'] . '</li><br/><br/>';
             }
 
             ?>
