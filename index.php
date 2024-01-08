@@ -33,6 +33,8 @@
     </style>
 </head>
 <body>
+<?php include 'popup.php';
+?>
 <?php include('./header.php') ?>
 <?php include 'banner.php';
 ?>

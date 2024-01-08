@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Popup</title>
-    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="Intro pop-up/popup.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="popup.js" defer></script>
+    <script src="Intro pop-up/popup.js" defer></script>
 </head>
 <body>
 <?php
