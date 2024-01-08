@@ -48,7 +48,7 @@
     $query = $conn->query('SELECT * FROM product ORDER BY RAND() LIMIT 4');
     if ( $query ) {
         while ($row = $query->fetch_assoc()) {
-            echo '<div class="pt-4 border flex flex-col shadow h-full w-full group cursor-pointer" onclick="window.location = `./product.php?id=` + ' . $row['id'] . '">
+            echo '<div class="bg-white pt-4 border flex flex-col shadow h-full w-full group cursor-pointer" onclick="window.location = `./product.php?id=` + ' . $row['id'] . '">
                         <div class="border-b pb-4 h-60 w-full flex items-center justify-center">
                             <img src="./img/products/' . $row['image'] . '.jpg" class="max-w-60 max-h-40 mx-auto " />
                         </div>

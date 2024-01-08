@@ -2,7 +2,7 @@
 
 <header>
     <div class="Upper-Section">
-        <img class="homepage-Logo" src="img/Logo-NerdyGadgets.png" alt="Logo">
+        <img class="homepage-Logo" src="img/Logo-NerdyGadgets.png" alt="Logo" onclick="window.location = './index.php'">
         <div class="headerContainer">
             <div class="loginButtons">
                 <a href="./uitchecken">Uitchecken</a>
