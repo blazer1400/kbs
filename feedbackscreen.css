@@ -1,0 +1,111 @@
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+    margin: 24px;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    text-decoration-color: black;
+    margin-left: 72%;
+    width: 20%;
+}
+.submit:active {
+    opacity: 50%;
+}
+#colorButton{
+    color: black;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border-color 0.1s;
+    border-radius: 2px;
+}
+#colorButton2 {
+    color: black;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border-color 0.1s;
+    border-radius: 2px;
+}
+#colorButton3 {
+    color: black;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border-color 0.1s;
+    border-radius: 2px;
+}
+.clicked {
+    border-color: #FF0000;
+}
+.typefeed {
+    background-color: white;
+    border-radius: 0;
+    margin: 12px;
+}
+
+#colorButton.clicked {
+    border: 4px solid #F7559A;
+}
+#colorButton2.clicked {
+    border: 4px solid #F7559A;
+}
+#colorButton3.clicked {
+    border: 4px solid #F7559A;
+}
+.typebuttons input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+.typebuttons label {
+    color: black;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: border-color 0.1s;
+    border-radius: 2px;
+    margin: 4px;
+}
+.typebuttons input[type="radio"]:checked + label{
+    border: 4px solid #F7559A;
+}
+.typebuttons label:hover {
+    background-color: #f8a3c6;
+}
+.typebuttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.feedType {
+    display: flex;
+    align-items: center;
+}
+
+.feedType input[type="radio"] {
+    margin-right: 5px;
+}
+.stars input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.stars input[type="radio"]:checked + label,
+.stars input[type="radio"]:checked + label ~ label {
+    color: #ffff43;
+}

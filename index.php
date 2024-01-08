@@ -91,9 +91,9 @@
 
 
 <div class="container">
-
+    <?php
+    include 'feedbackknop.php';
+    ?>
 </div>
-<?php include 'feedbackknop.php';
-?>
 </body>
 </html>
