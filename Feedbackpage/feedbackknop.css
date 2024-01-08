@@ -18,7 +18,7 @@ body {
 }
 
 .sticky-button {
-
+    z-index: 999;
     font-weight: bold;
     transform-origin: center;
     background-color: #F7559A;
@@ -26,9 +26,10 @@ body {
     border: none;
     cursor: pointer;
     padding: 10px 20px;
+    position: absolute;
 }
 .pop-up {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -44,6 +45,7 @@ body {
     box-shadow: 0 0 10px #F7559A;
     width: 35%;
     height: 80%;
+    z-index: 999;
 }
 
 .pop-up h1 {
